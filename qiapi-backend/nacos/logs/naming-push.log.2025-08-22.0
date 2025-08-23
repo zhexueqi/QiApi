@@ -1,0 +1,584 @@
+2025-08-22 21:08:51,620 INFO [PUSH-SUCC] 397ms, all delay time 918ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:08:51,632 INFO [PUSH-SUCC] 89ms, all delay time 666ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:08:51,632 INFO [PUSH-SUCC] 35ms, all delay time 939ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:08:51,633 INFO [PUSH-SUCC] 35ms, all delay time 654ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:08:51,767 INFO [PUSH-SUCC] 7ms, all delay time 543ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:08:52,212 INFO [PUSH-SUCC] 11ms, all delay time 610ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:08:52,427 INFO [PUSH-SUCC] 7ms, all delay time 540ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:org.apache.dubbo.metadata.MetadataService:1.0.0:dubbo-springboot-demo-provider', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:08:52,540 INFO [PUSH-SUCC] 11ms, all delay time 586ms, SLA 586ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:08:52,546 INFO [PUSH-SUCC] 17ms, all delay time 598ms, SLA 598ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:08:52,554 INFO [PUSH-SUCC] 25ms, all delay time 615ms, SLA 615ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:09:01,789 INFO [PUSH-SUCC] 21ms, all delay time 610ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1
+
+2025-08-22 21:09:02,099 INFO [PUSH-SUCC] 6ms, all delay time 564ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:09:02,321 INFO [PUSH-SUCC] 6ms, all delay time 539ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=1}, originalSize=1, DataSize=1
+
+2025-08-22 21:09:02,553 INFO [PUSH-SUCC] 7ms, all delay time 521ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.project.provider.DemoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:09:02,561 INFO [PUSH-SUCC] 15ms, all delay time 536ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.project.provider.DemoService::', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:09:02,880 INFO [PUSH-SUCC] 8ms, all delay time 614ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1
+
+2025-08-22 21:09:02,883 INFO [PUSH-SUCC] 10ms, all delay time 601ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:09:03,096 INFO [PUSH-SUCC] 5ms, all delay time 575ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1
+
+2025-08-22 21:09:03,110 INFO [PUSH-SUCC] 19ms, all delay time 572ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:09:03,631 INFO [PUSH-SUCC] 94ms, all delay time 594ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:org.apache.dubbo.metadata.MetadataService:1.0.0:dubbo-springboot-demo-provider', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:51:32,719 INFO [PUSH-SUCC] 39ms, all delay time 605ms, SLA 605ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=2}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:51:32,736 INFO [PUSH-SUCC] 56ms, all delay time 616ms, SLA 616ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=2}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:51:32,749 INFO [PUSH-SUCC] 69ms, all delay time 627ms, SLA 627ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=2}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:51:32,771 INFO [PUSH-SUCC] 6ms, all delay time 611ms, SLA 611ms, Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=2}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:51:32,772 INFO [PUSH-SUCC] 107ms, all delay time 652ms, SLA 652ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=2}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:51:32,777 INFO [PUSH-SUCC] 112ms, all delay time 663ms, SLA 663ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=2}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:51:32,789 INFO [PUSH-SUCC] 124ms, all delay time 667ms, SLA 667ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=2}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:51:42,868 INFO [PUSH-SUCC] 3ms, all delay time 557ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:51:42,869 INFO [PUSH-SUCC] 4ms, all delay time 567ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=2}, originalSize=0, DataSize=0
+
+2025-08-22 21:51:43,087 INFO [PUSH-SUCC] 7ms, all delay time 511ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=2}, originalSize=0, DataSize=0
+
+2025-08-22 21:51:43,168 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=3}
+
+2025-08-22 21:51:43,190 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=4}
+
+2025-08-22 21:51:43,192 INFO [PUSH-SUCC] 3ms, all delay time 600ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:51:43,193 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=4}
+
+2025-08-22 21:51:43,196 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=4}
+
+2025-08-22 21:51:43,235 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=4}
+
+2025-08-22 21:51:43,408 INFO [PUSH-SUCC] 3ms, all delay time 568ms, SLA 212ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=4}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:51:43,409 INFO [PUSH-SUCC] 5ms, all delay time 569ms, SLA 213ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=4}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:51:43,410 INFO [PUSH-SUCC] 4ms, all delay time 566ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:51:43,732 INFO [PUSH-SUCC] 2ms, all delay time 595ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:org.apache.dubbo.metadata.MetadataService:1.0.0:dubbo-springboot-demo-provider', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:51:43,734 INFO [PUSH-SUCC] 4ms, all delay time 570ms, SLA 544ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=4}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:51:43,737 INFO [PUSH-SUCC] 8ms, all delay time 562ms, SLA 502ms, Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=4}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:51:43,737 INFO [PUSH-SUCC] 7ms, all delay time 579ms, SLA 544ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=4}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:51:43,737 INFO [PUSH-SUCC] 8ms, all delay time 573ms, SLA 547ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=4}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:51:43,738 INFO [PUSH-SUCC] 9ms, all delay time 580ms, SLA 545ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=4}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:51:51,311 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=5}
+
+2025-08-22 21:51:51,315 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=5}
+
+2025-08-22 21:51:51,318 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=5}
+
+2025-08-22 21:51:51,682 INFO [PUSH-SUCC] 4ms, all delay time 526ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:51:51,689 INFO [PUSH-SUCC] 7ms, all delay time 536ms, SLA 378ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=5}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:51:51,690 INFO [PUSH-SUCC] 7ms, all delay time 537ms, SLA 379ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=5}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:51:51,792 INFO [PUSH-SUCC] 4ms, all delay time 565ms, SLA 474ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=5}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:51:51,793 INFO [PUSH-SUCC] 5ms, all delay time 566ms, SLA 475ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=5}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:51:51,796 INFO [PUSH-SUCC] 8ms, all delay time 605ms, SLA 481ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=5}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:51:51,797 INFO [PUSH-SUCC] 9ms, all delay time 606ms, SLA 482ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=5}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:51:51,802 INFO [PUSH-SUCC] 14ms, all delay time 572ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:51:51,803 INFO [PUSH-SUCC] 15ms, all delay time 607ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:51:51,899 INFO [PUSH-SUCC] 6ms, all delay time 603ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:org.apache.dubbo.metadata.MetadataService:1.0.0:dubbo-springboot-demo-provider', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:51:51,904 INFO [PUSH-SUCC] 10ms, all delay time 584ms, SLA 584ms, Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=5}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:54:14,644 INFO [PUSH-SUCC] 5ms, all delay time 571ms, SLA 571ms, Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=6}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:54:14,645 INFO [PUSH-SUCC] 6ms, all delay time 577ms, SLA 577ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=6}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:54:14,645 INFO [PUSH-SUCC] 6ms, all delay time 577ms, SLA 577ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=6}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:54:14,647 INFO [PUSH-SUCC] 8ms, all delay time 586ms, SLA 586ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=6}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:54:14,648 INFO [PUSH-SUCC] 9ms, all delay time 587ms, SLA 587ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=6}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:54:14,650 INFO [PUSH-SUCC] 11ms, all delay time 585ms, SLA 587ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=6}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:54:14,650 INFO [PUSH-SUCC] 11ms, all delay time 585ms, SLA 587ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=6}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:54:23,221 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=6}
+
+2025-08-22 21:54:23,229 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService', ephemeral=true, revision=0}
+
+2025-08-22 21:54:23,707 INFO [PUSH-SUCC] 13ms, all delay time 610ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:54:23,708 INFO [PUSH-SUCC] 14ms, all delay time 611ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:54:23,715 INFO [PUSH-SUCC] 21ms, all delay time 621ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=6}, originalSize=0, DataSize=0
+
+2025-08-22 21:54:23,741 INFO [PUSH-SUCC] 47ms, all delay time 647ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=6}, originalSize=0, DataSize=0
+
+2025-08-22 21:54:23,824 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=6}
+
+2025-08-22 21:54:23,856 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService', ephemeral=true, revision=0}
+
+2025-08-22 21:54:23,955 INFO [PUSH-SUCC] 13ms, all delay time 612ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=6}, originalSize=0, DataSize=0
+
+2025-08-22 21:54:23,958 INFO [PUSH-SUCC] 7ms, all delay time 612ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:54:24,060 INFO [PUSH-SUCC] 4ms, all delay time 580ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=6}, originalSize=0, DataSize=0
+
+2025-08-22 21:54:24,062 INFO [PUSH-SUCC] 6ms, all delay time 538ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.project.provider.DemoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:54:24,065 INFO [PUSH-SUCC] 8ms, all delay time 546ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.project.provider.DemoService::', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:54:24,121 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=7}
+
+2025-08-22 21:54:24,135 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=7}
+
+2025-08-22 21:54:24,154 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=8}
+
+2025-08-22 21:54:24,157 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=8}
+
+2025-08-22 21:54:24,160 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=8}
+
+2025-08-22 21:54:24,182 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=8}
+
+2025-08-22 21:54:24,281 INFO [PUSH-SUCC] 6ms, all delay time 579ms, SLA 121ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=8}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:54:24,282 INFO [PUSH-SUCC] 7ms, all delay time 580ms, SLA 122ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=8}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:54:24,285 INFO [PUSH-SUCC] 10ms, all delay time 573ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:54:24,285 INFO [PUSH-SUCC] 9ms, all delay time 573ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:54:24,622 INFO [PUSH-SUCC] 3ms, all delay time 513ms, SLA 468ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=8}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:54:24,622 INFO [PUSH-SUCC] 3ms, all delay time 513ms, SLA 468ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=8}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:54:24,622 INFO [PUSH-SUCC] 3ms, all delay time 540ms, SLA 465ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=8}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:54:24,623 INFO [PUSH-SUCC] 4ms, all delay time 562ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:org.apache.dubbo.metadata.MetadataService:1.0.0:dubbo-springboot-demo-provider', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:54:24,624 INFO [PUSH-SUCC] 5ms, all delay time 542ms, SLA 467ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=8}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:54:24,736 INFO [PUSH-SUCC] 6ms, all delay time 592ms, SLA 554ms, Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=8}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:54:24,737 INFO [PUSH-SUCC] 7ms, all delay time 592ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:54:25,271 INFO [PUSH-SUCC] 1ms, all delay time 556ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:org.apache.dubbo.metadata.MetadataService:1.0.0:dubbo-springboot-demo-provider', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:54:32,306 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=8}
+
+2025-08-22 21:54:32,309 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService', ephemeral=true, revision=0}
+
+2025-08-22 21:54:32,396 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=8}
+
+2025-08-22 21:54:32,399 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService', ephemeral=true, revision=0}
+
+2025-08-22 21:54:32,427 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=8}
+
+2025-08-22 21:54:32,431 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService', ephemeral=true, revision=0}
+
+2025-08-22 21:54:32,457 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=9}
+
+2025-08-22 21:54:32,461 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=9}
+
+2025-08-22 21:54:32,464 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=9}
+
+2025-08-22 21:54:32,467 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=9}
+
+2025-08-22 21:54:32,568 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:org.apache.dubbo.metadata.MetadataService:1.0.0:dubbo-springboot-demo-provider', ephemeral=true, revision=0}
+
+2025-08-22 21:54:32,677 INFO [PUSH-SUCC] 1ms, all delay time 527ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:54:32,677 INFO [PUSH-SUCC] 1ms, all delay time 527ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:54:32,681 INFO [PUSH-SUCC] 4ms, all delay time 537ms, SLA 224ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=9}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:54:32,681 INFO [PUSH-SUCC] 5ms, all delay time 537ms, SLA 224ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=9}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:54:32,895 INFO [PUSH-SUCC] 2ms, all delay time 530ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.project.provider.DemoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:54:32,896 INFO [PUSH-SUCC] 3ms, all delay time 560ms, SLA 429ms, Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=9}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:54:32,896 INFO [PUSH-SUCC] 3ms, all delay time 515ms, SLA 432ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=9}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:54:32,897 INFO [PUSH-SUCC] 4ms, all delay time 516ms, SLA 433ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=9}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:54:32,900 INFO [PUSH-SUCC] 7ms, all delay time 554ms, SLA 439ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=9}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:54:32,901 INFO [PUSH-SUCC] 8ms, all delay time 555ms, SLA 440ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=9}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:54:32,901 INFO [PUSH-SUCC] 8ms, all delay time 517ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:54:32,902 INFO [PUSH-SUCC] 9ms, all delay time 541ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.project.provider.DemoService::', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:54:32,902 INFO [PUSH-SUCC] 9ms, all delay time 553ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:54:32,903 INFO [PUSH-SUCC] 10ms, all delay time 519ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:54:32,904 INFO [PUSH-SUCC] 11ms, all delay time 555ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:54:33,004 INFO [PUSH-SUCC] 2ms, all delay time 559ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:org.apache.dubbo.metadata.MetadataService:1.0.0:dubbo-springboot-demo-provider', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:54:33,004 INFO [PUSH-SUCC] 2ms, all delay time 559ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:org.apache.dubbo.metadata.MetadataService:1.0.0:dubbo-springboot-demo-provider', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:55:48,095 INFO [PUSH-SUCC] 4ms, all delay time 588ms, SLA 588ms, Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=10}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:55:48,096 INFO [PUSH-SUCC] 5ms, all delay time 599ms, SLA 599ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=10}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:55:48,096 INFO [PUSH-SUCC] 5ms, all delay time 599ms, SLA 599ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=10}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:55:48,099 INFO [PUSH-SUCC] 8ms, all delay time 599ms, SLA 599ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=10}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:55:48,099 INFO [PUSH-SUCC] 8ms, all delay time 599ms, SLA 599ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=10}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:55:48,102 INFO [PUSH-SUCC] 11ms, all delay time 600ms, SLA 600ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=10}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:55:48,102 INFO [PUSH-SUCC] 11ms, all delay time 600ms, SLA 600ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=10}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:55:56,161 INFO [PUSH-SUCC] 2ms, all delay time 583ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:55:56,163 INFO [PUSH-SUCC] 3ms, all delay time 589ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=10}, originalSize=0, DataSize=0
+
+2025-08-22 21:55:56,370 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=11}
+
+2025-08-22 21:55:56,374 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=11}
+
+2025-08-22 21:55:56,382 INFO [PUSH-SUCC] 6ms, all delay time 561ms, SLA 12ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=11}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:55:56,382 INFO [PUSH-SUCC] 6ms, all delay time 561ms, SLA 12ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=11}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:55:56,384 INFO [PUSH-SUCC] 7ms, all delay time 558ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:55:56,597 INFO [PUSH-SUCC] 5ms, all delay time 527ms, SLA 223ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=11}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:55:56,597 INFO [PUSH-SUCC] 5ms, all delay time 527ms, SLA 223ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=11}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:55:56,598 INFO [PUSH-SUCC] 6ms, all delay time 523ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:55:56,918 INFO [PUSH-SUCC] 1ms, all delay time 568ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:org.apache.dubbo.metadata.MetadataService:1.0.0:dubbo-springboot-demo-provider', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 21:55:56,920 INFO [PUSH-SUCC] 3ms, all delay time 540ms, SLA 541ms, Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=11}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:55:56,920 INFO [PUSH-SUCC] 3ms, all delay time 553ms, SLA 553ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=11}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:55:56,921 INFO [PUSH-SUCC] 4ms, all delay time 554ms, SLA 554ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=11}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 21:58:07,260 INFO [PUSH-SUCC] 4ms, all delay time 507ms, SLA 507ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=12}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:58:07,260 INFO [PUSH-SUCC] 5ms, all delay time 507ms, SLA 507ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=12}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:58:07,367 INFO [PUSH-SUCC] 4ms, all delay time 611ms, SLA 611ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=12}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:58:07,367 INFO [PUSH-SUCC] 4ms, all delay time 604ms, SLA 604ms, Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=12}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:58:07,368 INFO [PUSH-SUCC] 5ms, all delay time 612ms, SLA 612ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=12}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:58:07,371 INFO [PUSH-SUCC] 8ms, all delay time 612ms, SLA 612ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=12}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 21:58:07,371 INFO [PUSH-SUCC] 8ms, all delay time 612ms, SLA 612ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=12}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 22:06:52,347 INFO [PUSH-SUCC] 4ms, all delay time 554ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:org.apache.dubbo.metadata.MetadataService:1.0.0:dubbo-springboot-demo-provider', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 22:12:17,627 INFO [PUSH-SUCC] 14ms, all delay time 594ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 22:12:17,632 INFO [PUSH-SUCC] 19ms, all delay time 610ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 22:12:17,822 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=1}
+
+2025-08-22 22:12:17,825 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=1}
+
+2025-08-22 22:12:17,836 INFO [PUSH-SUCC] 3ms, all delay time 558ms, SLA 14ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 22:12:17,845 INFO [PUSH-SUCC] 13ms, all delay time 567ms, SLA 23ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 22:12:17,850 INFO [PUSH-SUCC] 17ms, all delay time 567ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 22:12:18,052 INFO [PUSH-SUCC] 4ms, all delay time 536ms, SLA 227ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 22:12:18,059 INFO [PUSH-SUCC] 11ms, all delay time 543ms, SLA 234ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 22:12:18,065 INFO [PUSH-SUCC] 16ms, all delay time 545ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 22:12:18,399 INFO [PUSH-SUCC] 24ms, all delay time 583ms, SLA 583ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 22:12:18,403 INFO [PUSH-SUCC] 27ms, all delay time 561ms, SLA 561ms, Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=1}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 22:12:18,419 INFO [PUSH-SUCC] 45ms, all delay time 633ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:org.apache.dubbo.metadata.MetadataService:1.0.0:dubbo-springboot-demo-provider', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 22:12:18,433 INFO [PUSH-SUCC] 59ms, all delay time 617ms, SLA 617ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 22:36:55,208 INFO [PUSH-SUCC] 18ms, all delay time 606ms, SLA 607ms, Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=2}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 22:36:55,208 INFO [PUSH-SUCC] 18ms, all delay time 607ms, SLA 608ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=2}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 22:36:55,209 INFO [PUSH-SUCC] 19ms, all delay time 608ms, SLA 609ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=2}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 22:36:55,211 INFO [PUSH-SUCC] 21ms, all delay time 610ms, SLA 611ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=2}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 22:46:42,721 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=1}
+
+2025-08-22 22:46:42,723 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=1}
+
+2025-08-22 22:46:42,725 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=1}
+
+2025-08-22 22:46:43,256 INFO [PUSH-SUCC] 4ms, all delay time 530ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 22:46:43,260 INFO [PUSH-SUCC] 7ms, all delay time 538ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:org.apache.dubbo.metadata.MetadataService:1.0.0:dubbo-springboot-demo-provider', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 22:46:43,260 INFO [PUSH-SUCC] 8ms, all delay time 548ms, SLA 548ms, Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=1}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 22:46:43,262 INFO [PUSH-SUCC] 10ms, all delay time 547ms, SLA 547ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 22:46:43,264 INFO [PUSH-SUCC] 10ms, all delay time 549ms, SLA 550ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 22:46:43,267 INFO [PUSH-SUCC] 15ms, all delay time 552ms, SLA 553ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 22:46:43,269 INFO [PUSH-SUCC] 15ms, all delay time 554ms, SLA 554ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 22:46:43,271 INFO [PUSH-SUCC] 17ms, all delay time 559ms, SLA 559ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 22:46:43,271 INFO [PUSH-SUCC] 18ms, all delay time 559ms, SLA 559ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 22:46:43,278 INFO [PUSH-SUCC] 24ms, all delay time 558ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 22:46:43,298 INFO [PUSH-SUCC] 44ms, all delay time 581ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:52:23,486 INFO [PUSH-SUCC] 6ms, all delay time 548ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1
+
+2025-08-22 23:52:23,579 INFO [PUSH-SUCC] 2ms, all delay time 545ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:52:23,784 INFO [PUSH-SUCC] 4ms, all delay time 512ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=1}, originalSize=1, DataSize=1
+
+2025-08-22 23:52:24,590 INFO [PUSH-SUCC] 2ms, all delay time 553ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.project.provider.DemoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:52:24,592 INFO [PUSH-SUCC] 3ms, all delay time 560ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.project.provider.DemoService::', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:52:24,791 INFO [PUSH-SUCC] 2ms, all delay time 513ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1
+
+2025-08-22 23:52:24,890 INFO [PUSH-SUCC] 1ms, all delay time 600ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:52:25,095 INFO [PUSH-SUCC] 3ms, all delay time 563ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1
+
+2025-08-22 23:52:25,095 INFO [PUSH-SUCC] 3ms, all delay time 553ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:52:25,596 INFO [PUSH-SUCC] 2ms, all delay time 575ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:org.apache.dubbo.metadata.MetadataService:1.0.0:dubbo-springboot-demo-provider', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:52:30,745 INFO [PUSH-SUCC] 2ms, all delay time 506ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1
+
+2025-08-22 23:52:30,845 INFO [PUSH-SUCC] 1ms, all delay time 567ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:52:30,947 INFO [PUSH-SUCC] 1ms, all delay time 521ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=1}, originalSize=1, DataSize=1
+
+2025-08-22 23:52:31,052 INFO [PUSH-SUCC] 5ms, all delay time 603ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.project.provider.DemoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:52:31,054 INFO [PUSH-SUCC] 7ms, all delay time 565ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1
+
+2025-08-22 23:52:31,057 INFO [PUSH-SUCC] 10ms, all delay time 588ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1
+
+2025-08-22 23:52:31,058 INFO [PUSH-SUCC] 10ms, all delay time 562ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:52:31,062 INFO [PUSH-SUCC] 14ms, all delay time 588ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:52:31,062 INFO [PUSH-SUCC] 14ms, all delay time 615ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.project.provider.DemoService::', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:52:31,152 INFO [PUSH-SUCC] 3ms, all delay time 584ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:org.apache.dubbo.metadata.MetadataService:1.0.0:dubbo-springboot-demo-provider', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:52:36,304 INFO [PUSH-SUCC] 2ms, all delay time 530ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:52:36,304 INFO [PUSH-SUCC] 2ms, all delay time 583ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1
+
+2025-08-22 23:52:36,506 INFO [PUSH-SUCC] 3ms, all delay time 587ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=1}, originalSize=1, DataSize=1
+
+2025-08-22 23:52:36,507 INFO [PUSH-SUCC] 4ms, all delay time 525ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1
+
+2025-08-22 23:52:36,507 INFO [PUSH-SUCC] 4ms, all delay time 539ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.project.provider.DemoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:52:36,508 INFO [PUSH-SUCC] 5ms, all delay time 520ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:52:36,508 INFO [PUSH-SUCC] 5ms, all delay time 505ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=1}, originalSize=1, DataSize=1
+
+2025-08-22 23:52:36,510 INFO [PUSH-SUCC] 7ms, all delay time 544ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.project.provider.DemoService::', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:52:36,606 INFO [PUSH-SUCC] 1ms, all delay time 597ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:52:36,607 INFO [PUSH-SUCC] 2ms, all delay time 547ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:org.apache.dubbo.metadata.MetadataService:1.0.0:dubbo-springboot-demo-provider', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:53:59,863 INFO [PUSH-SUCC] 51ms, all delay time 604ms, SLA 604ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=2}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 23:53:59,877 INFO [PUSH-SUCC] 65ms, all delay time 623ms, SLA 624ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=2}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 23:53:59,878 INFO [PUSH-SUCC] 65ms, all delay time 622ms, SLA 622ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=2}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 23:53:59,973 INFO [PUSH-SUCC] 161ms, all delay time 714ms, SLA 714ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=2}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 23:53:59,974 INFO [PUSH-SUCC] 162ms, all delay time 675ms, SLA 675ms, Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=2}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 23:53:59,976 INFO [PUSH-SUCC] 163ms, all delay time 722ms, SLA 723ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=2}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 23:53:59,982 INFO [PUSH-SUCC] 169ms, all delay time 726ms, SLA 726ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=2}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 23:54:05,528 INFO [PUSH-SUCC] 1ms, all delay time 597ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.project.provider.DemoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:54:05,528 INFO [PUSH-SUCC] 1ms, all delay time 601ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.project.provider.DemoService::', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:54:05,936 INFO [PUSH-SUCC] 1ms, all delay time 561ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:org.apache.dubbo.metadata.MetadataService:1.0.0:dubbo-springboot-demo-provider', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:54:06,140 INFO [PUSH-SUCC] 3ms, all delay time 559ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:54:06,140 INFO [PUSH-SUCC] 2ms, all delay time 562ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=2}, originalSize=0, DataSize=0
+
+2025-08-22 23:54:06,273 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=3}
+
+2025-08-22 23:54:06,274 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=3}
+
+2025-08-22 23:54:06,342 INFO [PUSH-SUCC] 3ms, all delay time 538ms, SLA 69ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=3}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 23:54:06,342 INFO [PUSH-SUCC] 3ms, all delay time 535ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:54:06,548 INFO [PUSH-SUCC] 5ms, all delay time 521ms, SLA 273ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=3}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 23:54:06,551 INFO [PUSH-SUCC] 8ms, all delay time 521ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:54:06,565 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=4}
+
+2025-08-22 23:54:06,590 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=4}
+
+2025-08-22 23:54:06,847 INFO [PUSH-SUCC] 4ms, all delay time 584ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:org.apache.dubbo.metadata.MetadataService:1.0.0:dubbo-springboot-demo-provider', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:54:06,849 INFO [PUSH-SUCC] 6ms, all delay time 578ms, SLA 284ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=4}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 23:54:07,148 INFO [PUSH-SUCC] 2ms, all delay time 580ms, SLA 580ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=4}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 23:54:07,148 INFO [PUSH-SUCC] 2ms, all delay time 587ms, SLA 587ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=4}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 23:54:12,168 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=5}
+
+2025-08-22 23:54:12,172 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=5}
+
+2025-08-22 23:54:12,174 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=5}
+
+2025-08-22 23:54:12,599 INFO [PUSH-SUCC] 3ms, all delay time 527ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:54:12,602 INFO [PUSH-SUCC] 6ms, all delay time 507ms, SLA 430ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=5}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 23:54:12,605 INFO [PUSH-SUCC] 8ms, all delay time 536ms, SLA 437ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=5}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 23:54:12,700 INFO [PUSH-SUCC] 3ms, all delay time 539ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:org.apache.dubbo.metadata.MetadataService:1.0.0:dubbo-springboot-demo-provider', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:54:12,700 INFO [PUSH-SUCC] 3ms, all delay time 603ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:54:12,702 INFO [PUSH-SUCC] 4ms, all delay time 584ms, SLA 528ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=5}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 23:54:12,702 INFO [PUSH-SUCC] 4ms, all delay time 581ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:54:57,777 INFO [PUSH-SUCC] 18ms, all delay time 550ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=5}, originalSize=1, DataSize=1
+
+2025-08-22 23:54:58,178 INFO [PUSH-SUCC] 13ms, all delay time 601ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:54:58,371 INFO [PUSH-SUCC] 5ms, all delay time 560ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=5}, originalSize=1, DataSize=1
+
+2025-08-22 23:54:58,574 INFO [PUSH-SUCC] 6ms, all delay time 536ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.project.provider.DemoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:54:58,582 INFO [PUSH-SUCC] 12ms, all delay time 546ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.project.provider.DemoService::', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:54:58,879 INFO [PUSH-SUCC] 6ms, all delay time 595ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=5}, originalSize=1, DataSize=1
+
+2025-08-22 23:54:58,883 INFO [PUSH-SUCC] 9ms, all delay time 579ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:54:59,085 INFO [PUSH-SUCC] 6ms, all delay time 550ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=5}, originalSize=1, DataSize=1
+
+2025-08-22 23:54:59,090 INFO [PUSH-SUCC] 11ms, all delay time 546ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:54:59,606 INFO [PUSH-SUCC] 6ms, all delay time 515ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:org.apache.dubbo.metadata.MetadataService:1.0.0:dubbo-springboot-demo-provider', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:59:06,393 INFO [PUSH-SUCC] 15ms, all delay time 584ms, SLA 584ms, Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=6}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 23:59:06,394 INFO [PUSH-SUCC] 16ms, all delay time 596ms, SLA 596ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=6}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 23:59:06,394 INFO [PUSH-SUCC] 16ms, all delay time 598ms, SLA 599ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=6}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 23:59:06,396 INFO [PUSH-SUCC] 18ms, all delay time 595ms, SLA 595ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=6}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 23:59:06,402 INFO [PUSH-SUCC] 17ms, all delay time 601ms, SLA 601ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=6}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 23:59:06,403 INFO [PUSH-SUCC] 18ms, all delay time 607ms, SLA 608ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=6}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 23:59:06,406 INFO [PUSH-SUCC] 21ms, all delay time 608ms, SLA 608ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=6}, originalSize=0, DataSize=0, target=192.168.112.1
+
+2025-08-22 23:59:21,752 INFO [PUSH-SUCC] 23ms, all delay time 606ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:59:21,759 INFO [PUSH-SUCC] 29ms, all delay time 628ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=6}, originalSize=0, DataSize=0
+
+2025-08-22 23:59:22,044 INFO [PUSH-SUCC] 10ms, all delay time 582ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=6}, originalSize=0, DataSize=0
+
+2025-08-22 23:59:22,045 INFO [PUSH-SUCC] 12ms, all delay time 533ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.project.provider.DemoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:59:22,052 INFO [PUSH-SUCC] 18ms, all delay time 547ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.project.provider.DemoService::', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:59:22,340 INFO [PUSH-SUCC] 5ms, all delay time 590ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=6}, originalSize=0, DataSize=0
+
+2025-08-22 23:59:22,686 INFO [PUSH-SUCC] 351ms, all delay time 930ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:59:22,696 INFO [PUSH-SUCC] 160ms, all delay time 708ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=6}, originalSize=0, DataSize=0
+
+2025-08-22 23:59:22,708 INFO [PUSH-SUCC] 24ms, all delay time 714ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:59:22,864 INFO [PUSH-SUCC] 23ms, all delay time 538ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:59:22,875 INFO [PUSH-SUCC] 35ms, all delay time 561ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=6}, originalSize=0, DataSize=0
+
+2025-08-22 23:59:23,491 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:org.apache.dubbo.metadata.MetadataService:1.0.0:dubbo-springboot-demo-provider', ephemeral=true, revision=0}
+
+2025-08-22 23:59:23,530 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=7}
+
+2025-08-22 23:59:23,535 INFO [PUSH] Task merge for Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=7}
+
+2025-08-22 23:59:23,558 INFO [PUSH-SUCC] 8ms, all delay time 577ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:org.apache.dubbo.metadata.MetadataService:1.0.0:dubbo-springboot-demo-provider', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:59:23,559 INFO [PUSH-SUCC] 9ms, all delay time 578ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:org.apache.dubbo.metadata.MetadataService:1.0.0:dubbo-springboot-demo-provider', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:59:23,567 INFO [PUSH-SUCC] 17ms, all delay time 612ms, SLA 37ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=7}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 23:59:23,568 INFO [PUSH-SUCC] 17ms, all delay time 613ms, SLA 38ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=7}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 23:59:23,575 INFO [PUSH-SUCC] 24ms, all delay time 613ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:59:23,762 INFO [PUSH-SUCC] 11ms, all delay time 567ms, SLA 228ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=7}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 23:59:23,764 INFO [PUSH-SUCC] 12ms, all delay time 569ms, SLA 230ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=7}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 23:59:23,771 INFO [PUSH-SUCC] 19ms, all delay time 569ms for subscriber 192.168.112.1, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService', ephemeral=true, revision=0}, originalSize=0, DataSize=0
+
+2025-08-22 23:59:24,060 INFO [PUSH-SUCC] 8ms, all delay time 535ms, SLA 535ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=7}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 23:59:24,060 INFO [PUSH-SUCC] 8ms, all delay time 511ms, SLA 511ms, Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=7}, originalSize=1, DataSize=1, target=192.168.112.1
+
+2025-08-22 23:59:24,065 INFO [PUSH-SUCC] 12ms, all delay time 540ms, SLA 540ms, Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=7}, originalSize=1, DataSize=1, target=192.168.112.1
+

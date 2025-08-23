@@ -1,0 +1,276 @@
+2025-08-22 21:08:21,716 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService+mapping, newMd5=2ae926d997a913eef80e928555b6660d,oldMd5=
+
+2025-08-22 21:08:21,716 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=a398849c7492da729ae445bcf11f6e5e,oldMd5=
+
+2025-08-22 21:08:21,716 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService+mapping, newMd5=2ae926d997a913eef80e928555b6660d,oldMd5=
+
+2025-08-22 21:08:21,716 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService+mapping, newMd5=2ae926d997a913eef80e928555b6660d,oldMd5=
+
+2025-08-22 21:08:21,717 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=d5441266d35f213a3582454f3ac12c84,oldMd5=
+
+2025-08-22 21:08:21,716 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=6d5d0934b8bb2fb42abb0d6ac7ba4ac2,oldMd5=
+
+2025-08-22 21:08:21,734 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService+mapping, newMd5=2ae926d997a913eef80e928555b6660d,oldMd5=,lastModifiedTs=1743875993029
+
+2025-08-22 21:08:21,734 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService+mapping, newMd5=2ae926d997a913eef80e928555b6660d,oldMd5=,lastModifiedTs=1743875993663
+
+2025-08-22 21:08:21,734 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService+mapping, newMd5=2ae926d997a913eef80e928555b6660d,oldMd5=,lastModifiedTs=1743875993417
+
+2025-08-22 21:08:21,734 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=6d5d0934b8bb2fb42abb0d6ac7ba4ac2,oldMd5=,lastModifiedTs=1755012603298
+
+2025-08-22 21:08:21,734 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=a398849c7492da729ae445bcf11f6e5e,oldMd5=,lastModifiedTs=1755012602856
+
+2025-08-22 21:08:21,734 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=d5441266d35f213a3582454f3ac12c84,oldMd5=,lastModifiedTs=1755012603038
+
+2025-08-22 21:08:21,734 INFO [dump-all-ok] com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, 1755012603038, length=1820,md5UTF8=d5441266d35f213a3582454f3ac12c84
+
+2025-08-22 21:08:21,734 INFO [dump-all-ok] com.qiapi.qiapicommon.service.InnerInterfaceInfoService+mapping, 1743875993029, length=30,md5UTF8=2ae926d997a913eef80e928555b6660d
+
+2025-08-22 21:08:21,734 INFO [dump-all-ok] com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo, 1755012602856, length=1727,md5UTF8=a398849c7492da729ae445bcf11f6e5e
+
+2025-08-22 21:08:21,734 INFO [dump-all-ok] com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService+mapping, 1743875993417, length=30,md5UTF8=2ae926d997a913eef80e928555b6660d
+
+2025-08-22 21:08:21,738 INFO [dump-all-ok] com.qiapi.qiapicommon.service.InnerUserService+mapping, 1743875993663, length=30,md5UTF8=2ae926d997a913eef80e928555b6660d
+
+2025-08-22 21:08:21,738 INFO [dump-all-ok] com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, 1755012603298, length=1124,md5UTF8=6d5d0934b8bb2fb42abb0d6ac7ba4ac2
+
+2025-08-22 21:08:51,361 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:08:51,361 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:08:51,436 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:08:51,439 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=bb08de44f829ea94ce647a28afedc2a3,oldMd5=d5441266d35f213a3582454f3ac12c84
+
+2025-08-22 21:08:51,443 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=bb08de44f829ea94ce647a28afedc2a3,oldMd5=d5441266d35f213a3582454f3ac12c84,lastModifiedTs=1755868130991
+
+2025-08-22 21:08:51,445 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:08:51,447 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=cede9736c7d261961a7b5053c3cf5fd9,oldMd5=a398849c7492da729ae445bcf11f6e5e
+
+2025-08-22 21:08:51,451 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=cede9736c7d261961a7b5053c3cf5fd9,oldMd5=a398849c7492da729ae445bcf11f6e5e,lastModifiedTs=1755868130878
+
+2025-08-22 21:08:51,616 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:08:51,667 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:08:51,668 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=b4f8a4d3ff67b7936eca20885e868e32,oldMd5=6d5d0934b8bb2fb42abb0d6ac7ba4ac2
+
+2025-08-22 21:08:51,670 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=b4f8a4d3ff67b7936eca20885e868e32,oldMd5=6d5d0934b8bb2fb42abb0d6ac7ba4ac2,lastModifiedTs=1755868131614
+
+2025-08-22 21:51:42,368 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:51:42,431 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:51:42,433 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=b26c146291d4ca9280a45fc91694f27a,oldMd5=cede9736c7d261961a7b5053c3cf5fd9
+
+2025-08-22 21:51:42,442 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=b26c146291d4ca9280a45fc91694f27a,oldMd5=cede9736c7d261961a7b5053c3cf5fd9,lastModifiedTs=1755870702349
+
+2025-08-22 21:51:42,611 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:51:42,664 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:51:42,666 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=de8fc32c2eb3aa369c2430b91983d18c,oldMd5=bb08de44f829ea94ce647a28afedc2a3
+
+2025-08-22 21:51:42,668 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=de8fc32c2eb3aa369c2430b91983d18c,oldMd5=bb08de44f829ea94ce647a28afedc2a3,lastModifiedTs=1755870702607
+
+2025-08-22 21:51:42,858 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:51:42,880 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:51:42,881 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=9cc96499df769e789ae9911e1b8d562f,oldMd5=b4f8a4d3ff67b7936eca20885e868e32
+
+2025-08-22 21:51:42,883 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=9cc96499df769e789ae9911e1b8d562f,oldMd5=b4f8a4d3ff67b7936eca20885e868e32,lastModifiedTs=1755870702855
+
+2025-08-22 21:51:51,169 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:51:51,207 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:51:51,238 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:51:51,241 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:51:51,243 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=68b7e58564a3850c2b6ebbba18f2b53f,oldMd5=9cc96499df769e789ae9911e1b8d562f
+
+2025-08-22 21:51:51,245 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=68b7e58564a3850c2b6ebbba18f2b53f,oldMd5=9cc96499df769e789ae9911e1b8d562f,lastModifiedTs=1755870711237
+
+2025-08-22 21:51:51,245 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:51:51,247 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=0b2d4780717a97898ad78bc770abfedb,oldMd5=de8fc32c2eb3aa369c2430b91983d18c
+
+2025-08-22 21:51:51,248 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=0b2d4780717a97898ad78bc770abfedb,oldMd5=de8fc32c2eb3aa369c2430b91983d18c,lastModifiedTs=1755870711203
+
+2025-08-22 21:51:51,249 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:51:51,251 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=b329bd1f319fef9dbbe1a4ae1d86054b,oldMd5=b26c146291d4ca9280a45fc91694f27a
+
+2025-08-22 21:51:51,252 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=b329bd1f319fef9dbbe1a4ae1d86054b,oldMd5=b26c146291d4ca9280a45fc91694f27a,lastModifiedTs=1755870711166
+
+2025-08-22 21:54:23,111 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:54:23,200 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:54:23,201 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=5854f8f7bc7d88c18a7e3dbc2766d9e6,oldMd5=b329bd1f319fef9dbbe1a4ae1d86054b
+
+2025-08-22 21:54:23,204 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=5854f8f7bc7d88c18a7e3dbc2766d9e6,oldMd5=b329bd1f319fef9dbbe1a4ae1d86054b,lastModifiedTs=1755870863108
+
+2025-08-22 21:54:23,357 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:54:23,419 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:54:23,420 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=118cb1717c872e5960133e1fbaeeb89e,oldMd5=0b2d4780717a97898ad78bc770abfedb
+
+2025-08-22 21:54:23,422 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=118cb1717c872e5960133e1fbaeeb89e,oldMd5=0b2d4780717a97898ad78bc770abfedb,lastModifiedTs=1755870863353
+
+2025-08-22 21:54:23,725 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:54:23,818 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:54:23,820 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=9e8d36ef952b103b8ad01d1faa881465,oldMd5=68b7e58564a3850c2b6ebbba18f2b53f
+
+2025-08-22 21:54:23,836 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=9e8d36ef952b103b8ad01d1faa881465,oldMd5=68b7e58564a3850c2b6ebbba18f2b53f,lastModifiedTs=1755870863722
+
+2025-08-22 21:54:32,322 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:54:32,348 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:54:32,349 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=3feb3d10185a4c23fc403c9b681e7ed5,oldMd5=5854f8f7bc7d88c18a7e3dbc2766d9e6
+
+2025-08-22 21:54:32,351 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=3feb3d10185a4c23fc403c9b681e7ed5,oldMd5=5854f8f7bc7d88c18a7e3dbc2766d9e6,lastModifiedTs=1755870872318
+
+2025-08-22 21:54:32,360 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:54:32,394 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:54:32,457 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:54:32,459 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=62ab5e4d2dfc09aaa3b2fe154c4411cf,oldMd5=9e8d36ef952b103b8ad01d1faa881465
+
+2025-08-22 21:54:32,460 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=62ab5e4d2dfc09aaa3b2fe154c4411cf,oldMd5=9e8d36ef952b103b8ad01d1faa881465,lastModifiedTs=1755870872391
+
+2025-08-22 21:54:32,460 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:54:32,461 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=c9465c762398d138ecbb5fa12989807d,oldMd5=118cb1717c872e5960133e1fbaeeb89e
+
+2025-08-22 21:54:32,462 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=c9465c762398d138ecbb5fa12989807d,oldMd5=118cb1717c872e5960133e1fbaeeb89e,lastModifiedTs=1755870872357
+
+2025-08-22 21:55:55,606 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:55:55,614 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:55:55,614 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=eed67e89fb1e33dfc86d76806a9651ac,oldMd5=3feb3d10185a4c23fc403c9b681e7ed5
+
+2025-08-22 21:55:55,617 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=eed67e89fb1e33dfc86d76806a9651ac,oldMd5=3feb3d10185a4c23fc403c9b681e7ed5,lastModifiedTs=1755870955596
+
+2025-08-22 21:55:55,839 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:55:55,940 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:55:55,941 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=86a75c1118b890752e9b0198d888b925,oldMd5=c9465c762398d138ecbb5fa12989807d
+
+2025-08-22 21:55:55,944 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=86a75c1118b890752e9b0198d888b925,oldMd5=c9465c762398d138ecbb5fa12989807d,lastModifiedTs=1755870955835
+
+2025-08-22 21:55:56,099 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:55:56,159 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 21:55:56,159 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=0eafe4264cf642a1d8a9f60a601ca20a,oldMd5=62ab5e4d2dfc09aaa3b2fe154c4411cf
+
+2025-08-22 21:55:56,163 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=0eafe4264cf642a1d8a9f60a601ca20a,oldMd5=62ab5e4d2dfc09aaa3b2fe154c4411cf,lastModifiedTs=1755870956085
+
+2025-08-22 22:12:17,109 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 22:12:17,172 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 22:12:17,173 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=5da1f073e1c0a7b1e23a7c301f028906,oldMd5=eed67e89fb1e33dfc86d76806a9651ac
+
+2025-08-22 22:12:17,181 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=5da1f073e1c0a7b1e23a7c301f028906,oldMd5=eed67e89fb1e33dfc86d76806a9651ac,lastModifiedTs=1755871937093
+
+2025-08-22 22:12:17,297 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 22:12:17,393 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 22:12:17,394 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=e393f41de1c99889990f0c08b9a34af7,oldMd5=86a75c1118b890752e9b0198d888b925
+
+2025-08-22 22:12:17,396 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=e393f41de1c99889990f0c08b9a34af7,oldMd5=86a75c1118b890752e9b0198d888b925,lastModifiedTs=1755871937292
+
+2025-08-22 22:12:17,531 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 22:12:17,613 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 22:12:17,614 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=c0b83c4c32fa928833ecd636936f78ae,oldMd5=0eafe4264cf642a1d8a9f60a601ca20a
+
+2025-08-22 22:12:17,615 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=c0b83c4c32fa928833ecd636936f78ae,oldMd5=0eafe4264cf642a1d8a9f60a601ca20a,lastModifiedTs=1755871937528
+
+2025-08-22 23:54:05,673 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 23:54:05,725 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 23:54:05,728 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=602424cb1dd6dff2f36b3544fbaaed92,oldMd5=5da1f073e1c0a7b1e23a7c301f028906
+
+2025-08-22 23:54:05,743 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=602424cb1dd6dff2f36b3544fbaaed92,oldMd5=5da1f073e1c0a7b1e23a7c301f028906,lastModifiedTs=1755878045650
+
+2025-08-22 23:54:05,822 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 23:54:05,846 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 23:54:05,848 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=14de493a9f8152aec8cc438bdd15b455,oldMd5=e393f41de1c99889990f0c08b9a34af7
+
+2025-08-22 23:54:05,852 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=14de493a9f8152aec8cc438bdd15b455,oldMd5=e393f41de1c99889990f0c08b9a34af7,lastModifiedTs=1755878045818
+
+2025-08-22 23:54:06,041 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 23:54:06,054 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 23:54:06,055 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=1462031284a99d06b8a87c160a30db30,oldMd5=c0b83c4c32fa928833ecd636936f78ae
+
+2025-08-22 23:54:06,059 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=1462031284a99d06b8a87c160a30db30,oldMd5=c0b83c4c32fa928833ecd636936f78ae,lastModifiedTs=1755878046037
+
+2025-08-22 23:54:12,084 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 23:54:12,090 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 23:54:12,091 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=b8fd072baf48ccb8a7e86200fc6d0f9e,oldMd5=602424cb1dd6dff2f36b3544fbaaed92
+
+2025-08-22 23:54:12,094 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=b8fd072baf48ccb8a7e86200fc6d0f9e,oldMd5=602424cb1dd6dff2f36b3544fbaaed92,lastModifiedTs=1755878052080
+
+2025-08-22 23:54:12,111 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 23:54:12,134 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 23:54:12,195 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 23:54:12,196 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=e1342ae834285d11bc84bf3cef4c5a0c,oldMd5=1462031284a99d06b8a87c160a30db30
+
+2025-08-22 23:54:12,200 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=e1342ae834285d11bc84bf3cef4c5a0c,oldMd5=1462031284a99d06b8a87c160a30db30,lastModifiedTs=1755878052130
+
+2025-08-22 23:54:12,200 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 23:54:12,202 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=64c06aaac6662e3120449ca32cbb1916,oldMd5=14de493a9f8152aec8cc438bdd15b455
+
+2025-08-22 23:54:12,206 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=64c06aaac6662e3120449ca32cbb1916,oldMd5=14de493a9f8152aec8cc438bdd15b455,lastModifiedTs=1755878052106
+
+2025-08-22 23:59:22,967 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 23:59:22,977 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 23:59:23,039 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 23:59:23,043 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=fc1142e188e923eb4dfbe892ee3b47ee,oldMd5=64c06aaac6662e3120449ca32cbb1916
+
+2025-08-22 23:59:23,094 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=fc1142e188e923eb4dfbe892ee3b47ee,oldMd5=64c06aaac6662e3120449ca32cbb1916,lastModifiedTs=1755878362973
+
+2025-08-22 23:59:23,099 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 23:59:23,100 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=ed304a910b89602ea3302ace29e60281,oldMd5=b8fd072baf48ccb8a7e86200fc6d0f9e
+
+2025-08-22 23:59:23,102 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=ed304a910b89602ea3302ace29e60281,oldMd5=b8fd072baf48ccb8a7e86200fc6d0f9e,lastModifiedTs=1755878362879
+
+2025-08-22 23:59:23,264 INFO [dump] add formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 23:59:23,304 INFO [dump] process formal task. groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo
+
+2025-08-22 23:59:23,306 INFO [dump] md5 changed, save to disk cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=013acd60892b26fcef5ec57704c75951,oldMd5=e1342ae834285d11bc84bf3cef4c5a0c
+
+2025-08-22 23:59:23,310 INFO [dump] md5 changed, update md5 and timestamp in jvm cache ,groupKey=com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService:::provider:dubbo-springboot-demo-provider+dubbo, newMd5=013acd60892b26fcef5ec57704c75951,oldMd5=e1342ae834285d11bc84bf3cef4c5a0c,lastModifiedTs=1755878363217
+

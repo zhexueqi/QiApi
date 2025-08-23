@@ -1,0 +1,54 @@
+2025-04-16 17:12:18,978 INFO [SelectorManager] Load SelectorContextBuilder(class com.alibaba.nacos.naming.selector.context.CmdbSelectorContextBuilder) contextType(CMDB) successfully.
+
+2025-04-16 17:12:18,978 INFO [SelectorManager] Load SelectorContextBuilder(class com.alibaba.nacos.naming.selector.context.NoneSelectorContextBuilder) contextType(NONE) successfully.
+
+2025-04-16 17:12:18,980 INFO [SelectorManager] Load Selector(class com.alibaba.nacos.naming.selector.LabelSelector) type(label) contextType(CMDB) successfully.
+
+2025-04-16 17:12:18,980 INFO [SelectorManager] Load Selector(class com.alibaba.nacos.naming.selector.NoneSelector) type(none) contextType(NONE) successfully.
+
+2025-04-16 17:12:19,556 INFO Load instance extension handler []
+
+2025-04-16 17:12:22,471 INFO Client connection 1744794742422_127.0.0.1_5055 connect
+
+2025-04-16 17:12:24,632 INFO Client connection 1744794744612_127.0.0.1_5066 connect
+
+2025-04-16 17:12:24,787 INFO Client connection 1744794744764_127.0.0.1_5067 connect
+
+2025-04-16 17:12:31,700 INFO Client connection 1744794744764_127.0.0.1_5067 disconnect, remove instances and subscribers
+
+2025-04-16 17:12:39,751 INFO Client connection 1744794759742_127.0.0.1_7598 connect
+
+2025-04-16 17:12:39,935 INFO Client connection 1744794759925_127.0.0.1_7600 connect
+
+2025-04-16 17:12:40,071 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=0}, 1744794759925_127.0.0.1_7600
+
+2025-04-16 17:12:40,492 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=0}, 1744794759925_127.0.0.1_7600
+
+2025-04-16 17:12:40,737 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='providers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=0}, 1744794759925_127.0.0.1_7600
+
+2025-04-16 17:12:41,036 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='dubbo-springboot-demo-provider', ephemeral=true, revision=0}, 1744794759742_127.0.0.1_7598
+
+2025-04-16 17:24:14,325 WARN remove instance from non-exist service: Service{namespace='public', group='DEFAULT_GROUP', name='consumers:com.qiapi.project.provider.DemoService::', ephemeral=true, revision=0}
+
+2025-04-16 17:24:14,344 WARN remove instance from non-exist service: Service{namespace='public', group='DEFAULT_GROUP', name='consumers:com.qiapi.qiapicommon.service.InnerInterfaceInfoService::', ephemeral=true, revision=0}
+
+2025-04-16 17:24:14,348 WARN remove instance from non-exist service: Service{namespace='public', group='DEFAULT_GROUP', name='consumers:com.qiapi.qiapicommon.service.InnerUserService::', ephemeral=true, revision=0}
+
+2025-04-16 17:24:14,351 WARN remove instance from non-exist service: Service{namespace='public', group='DEFAULT_GROUP', name='consumers:com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService::', ephemeral=true, revision=0}
+
+2025-04-16 17:24:14,673 INFO Client connection 1744794742422_127.0.0.1_5055 disconnect, remove instances and subscribers
+
+2025-04-16 17:24:14,806 INFO Client connection 1744794744862_127.0.0.1_5068 disconnect, remove instances and subscribers
+
+2025-04-16 17:24:14,807 INFO Client connection 1744794743659_127.0.0.1_5062 disconnect, remove instances and subscribers
+
+2025-04-16 17:24:14,807 INFO Client connection 1744794744612_127.0.0.1_5066 disconnect, remove instances and subscribers
+
+2025-04-16 17:45:25,758 INFO Client connection 1744794756942_127.0.0.1_5140 disconnect, remove instances and subscribers
+
+2025-04-16 17:45:25,761 INFO Client connection 1744794759742_127.0.0.1_7598 disconnect, remove instances and subscribers
+
+2025-04-16 17:45:25,762 INFO Client connection 1744794759925_127.0.0.1_7600 disconnect, remove instances and subscribers
+
+2025-04-16 17:45:25,763 INFO Client connection 1744794760130_127.0.0.1_7601 disconnect, remove instances and subscribers
+

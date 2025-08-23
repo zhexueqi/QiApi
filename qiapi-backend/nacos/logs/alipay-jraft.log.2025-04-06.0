@@ -1,0 +1,260 @@
+2025-04-06 01:11:41,845 INFO SPI service [com.alipay.sofa.jraft.JRaftServiceFactory - com.alipay.sofa.jraft.core.DefaultJRaftServiceFactory] loading.
+
+2025-04-06 01:11:41,969 INFO SPI service [com.alipay.sofa.jraft.rpc.RaftRpcFactory - com.alipay.sofa.jraft.rpc.impl.GrpcRaftRpcFactory] loading.
+
+2025-04-06 01:11:42,175 INFO SPI service [com.alipay.sofa.jraft.util.timer.RaftTimerFactory - com.alipay.sofa.jraft.util.timer.DefaultRaftTimerFactory] loading.
+
+2025-04-06 01:11:42,182 INFO The number of active nodes increment to 1.
+
+2025-04-06 01:11:42,522 INFO Starts FSMCaller successfully.
+
+2025-04-06 01:11:42,530 WARN No data for snapshot reader D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service\snapshot.
+
+2025-04-06 01:11:42,542 INFO Node <naming_persistent_service/192.168.112.1:7848> init, term=0, lastLogId=LogId [index=0, term=0], conf=192.168.112.1:7848, oldConf=.
+
+2025-04-06 01:11:42,544 INFO Node <naming_persistent_service/192.168.112.1:7848> start vote and grant vote self, term=0.
+
+2025-04-06 01:11:42,573 WARN Unable to fsync directory D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service\meta-data on windows.
+
+2025-04-06 01:11:42,583 INFO Save raft meta, path=D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service\meta-data, term=1, votedFor=192.168.112.1:7848, cost time=27 ms
+
+2025-04-06 01:11:42,583 INFO Node <naming_persistent_service/192.168.112.1:7848> become leader of group, term=1, conf=192.168.112.1:7848, oldConf=.
+
+2025-04-06 01:11:42,587 INFO -Djraft.recyclers.maxCapacityPerThread: 4096.
+
+2025-04-06 01:11:42,591 WARN RPC server is not started in RaftGroupService.
+
+2025-04-06 01:11:42,591 INFO Start the RaftGroupService successfully.
+
+2025-04-06 01:11:42,606 INFO onLeaderStart: term=1.
+
+2025-04-06 01:11:42,698 INFO The number of active nodes increment to 2.
+
+2025-04-06 01:11:42,739 INFO Creating new channel to: 192.168.112.1:7848.
+
+2025-04-06 01:11:42,753 INFO The channel 192.168.112.1:7848 is in state: CONNECTING.
+
+2025-04-06 01:11:42,763 INFO Starts FSMCaller successfully.
+
+2025-04-06 01:11:42,763 WARN No data for snapshot reader D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot.
+
+2025-04-06 01:11:42,765 INFO Node <naming_persistent_service_v2/192.168.112.1:7848> init, term=0, lastLogId=LogId [index=0, term=0], conf=192.168.112.1:7848, oldConf=.
+
+2025-04-06 01:11:42,765 INFO Node <naming_persistent_service_v2/192.168.112.1:7848> start vote and grant vote self, term=0.
+
+2025-04-06 01:11:42,772 WARN Unable to fsync directory D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data on windows.
+
+2025-04-06 01:11:42,775 INFO Save raft meta, path=D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data, term=1, votedFor=192.168.112.1:7848, cost time=8 ms
+
+2025-04-06 01:11:42,775 INFO Node <naming_persistent_service_v2/192.168.112.1:7848> become leader of group, term=1, conf=192.168.112.1:7848, oldConf=.
+
+2025-04-06 01:11:42,776 WARN RPC server is not started in RaftGroupService.
+
+2025-04-06 01:11:42,776 INFO Start the RaftGroupService successfully.
+
+2025-04-06 01:11:42,778 INFO onLeaderStart: term=1.
+
+2025-04-06 01:11:42,800 INFO The number of active nodes increment to 3.
+
+2025-04-06 01:11:42,872 INFO Starts FSMCaller successfully.
+
+2025-04-06 01:11:42,872 WARN No data for snapshot reader D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_instance_metadata\snapshot.
+
+2025-04-06 01:11:42,873 INFO Node <naming_instance_metadata/192.168.112.1:7848> init, term=0, lastLogId=LogId [index=0, term=0], conf=192.168.112.1:7848, oldConf=.
+
+2025-04-06 01:11:42,874 INFO Node <naming_instance_metadata/192.168.112.1:7848> start vote and grant vote self, term=0.
+
+2025-04-06 01:11:42,881 WARN Unable to fsync directory D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_instance_metadata\meta-data on windows.
+
+2025-04-06 01:11:42,881 INFO Save raft meta, path=D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_instance_metadata\meta-data, term=1, votedFor=192.168.112.1:7848, cost time=6 ms
+
+2025-04-06 01:11:42,881 INFO Node <naming_instance_metadata/192.168.112.1:7848> become leader of group, term=1, conf=192.168.112.1:7848, oldConf=.
+
+2025-04-06 01:11:42,882 WARN RPC server is not started in RaftGroupService.
+
+2025-04-06 01:11:42,882 INFO Start the RaftGroupService successfully.
+
+2025-04-06 01:11:42,887 INFO onLeaderStart: term=1.
+
+2025-04-06 01:11:42,893 INFO The number of active nodes increment to 4.
+
+2025-04-06 01:11:42,956 INFO Starts FSMCaller successfully.
+
+2025-04-06 01:11:42,956 WARN No data for snapshot reader D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_service_metadata\snapshot.
+
+2025-04-06 01:11:42,957 INFO Node <naming_service_metadata/192.168.112.1:7848> init, term=0, lastLogId=LogId [index=0, term=0], conf=192.168.112.1:7848, oldConf=.
+
+2025-04-06 01:11:42,957 INFO Node <naming_service_metadata/192.168.112.1:7848> start vote and grant vote self, term=0.
+
+2025-04-06 01:11:42,964 WARN Unable to fsync directory D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_service_metadata\meta-data on windows.
+
+2025-04-06 01:11:42,964 INFO Save raft meta, path=D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_service_metadata\meta-data, term=1, votedFor=192.168.112.1:7848, cost time=7 ms
+
+2025-04-06 01:11:42,964 INFO Node <naming_service_metadata/192.168.112.1:7848> become leader of group, term=1, conf=192.168.112.1:7848, oldConf=.
+
+2025-04-06 01:11:42,965 WARN RPC server is not started in RaftGroupService.
+
+2025-04-06 01:11:42,965 INFO Start the RaftGroupService successfully.
+
+2025-04-06 01:11:42,968 INFO onLeaderStart: term=1.
+
+2025-04-06 01:11:43,086 INFO The channel 192.168.112.1:7848 is in state: READY.
+
+2025-04-06 01:11:43,086 INFO The channel 192.168.112.1:7848 has successfully established.
+
+2025-04-06 01:25:51,615 INFO SPI service [com.alipay.sofa.jraft.JRaftServiceFactory - com.alipay.sofa.jraft.core.DefaultJRaftServiceFactory] loading.
+
+2025-04-06 01:25:51,842 INFO SPI service [com.alipay.sofa.jraft.rpc.RaftRpcFactory - com.alipay.sofa.jraft.rpc.impl.GrpcRaftRpcFactory] loading.
+
+2025-04-06 01:25:52,137 INFO SPI service [com.alipay.sofa.jraft.util.timer.RaftTimerFactory - com.alipay.sofa.jraft.util.timer.DefaultRaftTimerFactory] loading.
+
+2025-04-06 01:25:52,150 INFO The number of active nodes increment to 1.
+
+2025-04-06 01:25:52,619 INFO Starts FSMCaller successfully.
+
+2025-04-06 01:25:52,633 WARN No data for snapshot reader D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service\snapshot.
+
+2025-04-06 01:25:52,633 INFO Node <naming_persistent_service/192.168.112.1:7848> target priority value has changed from: 0, to: -1.
+
+2025-04-06 01:25:52,649 INFO Node <naming_persistent_service/192.168.112.1:7848> init, term=1, lastLogId=LogId [index=1, term=1], conf=192.168.112.1:7848, oldConf=.
+
+2025-04-06 01:25:52,653 INFO Node <naming_persistent_service/192.168.112.1:7848> start vote and grant vote self, term=1.
+
+2025-04-06 01:25:52,679 WARN Unable to fsync directory D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service\meta-data on windows.
+
+2025-04-06 01:25:52,691 INFO Save raft meta, path=D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service\meta-data, term=2, votedFor=192.168.112.1:7848, cost time=22 ms
+
+2025-04-06 01:25:52,691 INFO Node <naming_persistent_service/192.168.112.1:7848> become leader of group, term=2, conf=192.168.112.1:7848, oldConf=.
+
+2025-04-06 01:25:52,696 INFO -Djraft.recyclers.maxCapacityPerThread: 4096.
+
+2025-04-06 01:25:52,700 WARN RPC server is not started in RaftGroupService.
+
+2025-04-06 01:25:52,700 INFO Start the RaftGroupService successfully.
+
+2025-04-06 01:25:52,713 INFO onLeaderStart: term=2.
+
+2025-04-06 01:25:52,805 INFO The number of active nodes increment to 2.
+
+2025-04-06 01:25:52,850 INFO Creating new channel to: 192.168.112.1:7848.
+
+2025-04-06 01:25:52,868 INFO The channel 192.168.112.1:7848 is in state: CONNECTING.
+
+2025-04-06 01:25:52,887 INFO Starts FSMCaller successfully.
+
+2025-04-06 01:25:52,888 WARN No data for snapshot reader D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot.
+
+2025-04-06 01:25:52,888 INFO Node <naming_persistent_service_v2/192.168.112.1:7848> target priority value has changed from: 0, to: -1.
+
+2025-04-06 01:25:52,889 INFO Node <naming_persistent_service_v2/192.168.112.1:7848> init, term=1, lastLogId=LogId [index=1, term=1], conf=192.168.112.1:7848, oldConf=.
+
+2025-04-06 01:25:52,890 INFO Node <naming_persistent_service_v2/192.168.112.1:7848> start vote and grant vote self, term=1.
+
+2025-04-06 01:25:52,899 WARN Unable to fsync directory D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data on windows.
+
+2025-04-06 01:25:52,899 INFO Save raft meta, path=D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data, term=2, votedFor=192.168.112.1:7848, cost time=8 ms
+
+2025-04-06 01:25:52,899 INFO Node <naming_persistent_service_v2/192.168.112.1:7848> become leader of group, term=2, conf=192.168.112.1:7848, oldConf=.
+
+2025-04-06 01:25:52,900 WARN RPC server is not started in RaftGroupService.
+
+2025-04-06 01:25:52,900 INFO Start the RaftGroupService successfully.
+
+2025-04-06 01:25:52,902 INFO onLeaderStart: term=2.
+
+2025-04-06 01:25:52,917 INFO The number of active nodes increment to 3.
+
+2025-04-06 01:25:52,941 INFO The channel 192.168.112.1:7848 is in state: READY.
+
+2025-04-06 01:25:52,942 INFO The channel 192.168.112.1:7848 has successfully established.
+
+2025-04-06 01:25:52,992 INFO Starts FSMCaller successfully.
+
+2025-04-06 01:25:52,993 WARN No data for snapshot reader D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_instance_metadata\snapshot.
+
+2025-04-06 01:25:52,993 INFO Node <naming_instance_metadata/192.168.112.1:7848> target priority value has changed from: 0, to: -1.
+
+2025-04-06 01:25:52,994 INFO Node <naming_instance_metadata/192.168.112.1:7848> init, term=1, lastLogId=LogId [index=1, term=1], conf=192.168.112.1:7848, oldConf=.
+
+2025-04-06 01:25:52,994 INFO Node <naming_instance_metadata/192.168.112.1:7848> start vote and grant vote self, term=1.
+
+2025-04-06 01:25:53,002 WARN Unable to fsync directory D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_instance_metadata\meta-data on windows.
+
+2025-04-06 01:25:53,002 INFO Save raft meta, path=D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_instance_metadata\meta-data, term=2, votedFor=192.168.112.1:7848, cost time=8 ms
+
+2025-04-06 01:25:53,002 INFO Node <naming_instance_metadata/192.168.112.1:7848> become leader of group, term=2, conf=192.168.112.1:7848, oldConf=.
+
+2025-04-06 01:25:53,003 WARN RPC server is not started in RaftGroupService.
+
+2025-04-06 01:25:53,003 INFO Start the RaftGroupService successfully.
+
+2025-04-06 01:25:53,005 INFO onLeaderStart: term=2.
+
+2025-04-06 01:25:53,007 INFO The number of active nodes increment to 4.
+
+2025-04-06 01:25:53,069 INFO Starts FSMCaller successfully.
+
+2025-04-06 01:25:53,070 WARN No data for snapshot reader D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_service_metadata\snapshot.
+
+2025-04-06 01:25:53,070 INFO Node <naming_service_metadata/192.168.112.1:7848> target priority value has changed from: 0, to: -1.
+
+2025-04-06 01:25:53,071 INFO Node <naming_service_metadata/192.168.112.1:7848> init, term=1, lastLogId=LogId [index=1, term=1], conf=192.168.112.1:7848, oldConf=.
+
+2025-04-06 01:25:53,071 INFO Node <naming_service_metadata/192.168.112.1:7848> start vote and grant vote self, term=1.
+
+2025-04-06 01:25:53,078 WARN Unable to fsync directory D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_service_metadata\meta-data on windows.
+
+2025-04-06 01:25:53,079 INFO Save raft meta, path=D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_service_metadata\meta-data, term=2, votedFor=192.168.112.1:7848, cost time=6 ms
+
+2025-04-06 01:25:53,079 INFO Node <naming_service_metadata/192.168.112.1:7848> become leader of group, term=2, conf=192.168.112.1:7848, oldConf=.
+
+2025-04-06 01:25:53,079 WARN RPC server is not started in RaftGroupService.
+
+2025-04-06 01:25:53,079 INFO Start the RaftGroupService successfully.
+
+2025-04-06 01:25:53,082 INFO onLeaderStart: term=2.
+
+2025-04-06 01:43:36,478 WARN Unable to fsync directory D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service\snapshot\temp on windows.
+
+2025-04-06 01:43:36,479 INFO Deleting snapshot D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service\snapshot\snapshot_2.
+
+2025-04-06 01:43:36,479 INFO Renaming D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service\snapshot\temp to D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service\snapshot\snapshot_2.
+
+2025-04-06 01:43:36,482 WARN Unable to fsync directory D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service\snapshot on windows.
+
+2025-04-06 01:47:37,324 WARN Unable to fsync directory D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_instance_metadata\snapshot\temp on windows.
+
+2025-04-06 01:47:37,324 INFO Deleting snapshot D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_instance_metadata\snapshot\snapshot_2.
+
+2025-04-06 01:47:37,325 INFO Renaming D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_instance_metadata\snapshot\temp to D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_instance_metadata\snapshot\snapshot_2.
+
+2025-04-06 01:47:37,326 WARN Unable to fsync directory D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_instance_metadata\snapshot on windows.
+
+2025-04-06 01:53:35,848 WARN Unable to fsync directory D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot\temp on windows.
+
+2025-04-06 01:53:35,848 INFO Deleting snapshot D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot\snapshot_2.
+
+2025-04-06 01:53:35,849 INFO Renaming D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot\temp to D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot\snapshot_2.
+
+2025-04-06 01:53:35,850 WARN Unable to fsync directory D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot on windows.
+
+2025-04-06 01:55:52,202 WARN Unable to fsync directory D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_service_metadata\snapshot\temp on windows.
+
+2025-04-06 01:55:52,202 INFO Deleting snapshot D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_service_metadata\snapshot\snapshot_2.
+
+2025-04-06 01:55:52,203 INFO Renaming D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_service_metadata\snapshot\temp to D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_service_metadata\snapshot\snapshot_2.
+
+2025-04-06 01:55:52,204 WARN Unable to fsync directory D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_service_metadata\snapshot on windows.
+
+2025-04-06 02:13:36,391 INFO Truncated prefix logs in data path: D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service\log from log index 1 to 3, cost 16 ms.
+
+2025-04-06 02:17:37,232 INFO Truncated prefix logs in data path: D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_instance_metadata\log from log index 1 to 3, cost 7 ms.
+
+2025-04-06 02:23:35,880 INFO Truncated prefix logs in data path: D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service_v2\log from log index 1 to 3, cost 6 ms.
+
+2025-04-06 02:25:52,226 INFO Truncated prefix logs in data path: D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_service_metadata\log from log index 1 to 3, cost 2 ms.
+
+2025-04-06 02:43:36,228 INFO Truncated prefix logs in data path: D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_persistent_service\log from log index 3 to 3, cost 3 ms.
+
+2025-04-06 02:47:37,295 INFO Truncated prefix logs in data path: D:\CodeALL\codeNav\QiAPI开放平台\apiQi\qiapi-backend\nacos\data\protocol\raft\naming_instance_metadata\log from log index 3 to 3, cost 10 ms.
+
