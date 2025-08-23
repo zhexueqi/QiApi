@@ -13,7 +13,9 @@ import com.qiapi.project.model.dto.credit.PackagePurchaseRequest;
 import com.qiapi.project.model.vo.CreditBalanceVO;
 import com.qiapi.project.model.vo.CreditPackageVO;
 import com.qiapi.project.model.vo.PointBalanceVO;
-import com.qiapi.project.service.CreditService;
+import com.qiapi.project.model.vo.OrderVO;
+import com.qiapi.project.model.vo.OrderVO;
+import com.qiapi.project.service.OrderService;
 import com.qiapi.project.service.PointService;
 import com.qiapi.project.service.UserService;
 import com.qiapi.qiapicommon.model.entity.User;
@@ -37,6 +39,9 @@ public class CreditController {
 
     @Resource
     private CreditService creditService;
+
+    @Resource
+    private OrderService orderService;
 
     @Resource
     private PointService pointService;
@@ -180,6 +185,122 @@ public class CreditController {
 
         // 初始化积分账户
         boolean result = pointService.initUserPoints(loginUser.getId());
+
+        return ResultUtils.success(result);
+    }
+
+    /**
+     * 购买额度套餐
+     */
+    @PostMapping("/purchase-package")
+    @AuthCheck(mustRole = UserConstant.DEFAULT_ROLE)
+    public BaseResponse<String> purchaseCreditPackage(@RequestBody PackagePurchaseRequest request, 
+                                                     HttpServletRequest httpRequest) {
+        // 参数校验
+        if (request == null || request.getPackageId() == null || request.getPackageId() <= 0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+
+        // 获取当前用户
+        User loginUser = userService.getLoginUser(httpRequest);
+
+        // 创建订单
+        String orderNo = orderService.createOrder(loginUser.getId(), request);
+
+        return ResultUtils.success(orderNo);
+    }
+
+    /**
+     * 查询用户订单列表
+     */
+    @GetMapping("/orders")
+    @AuthCheck(mustRole = UserConstant.DEFAULT_ROLE)
+    public BaseResponse<List<OrderVO>> getUserOrders(HttpServletRequest httpRequest) {
+        // 获取当前用户
+        User loginUser = userService.getLoginUser(httpRequest);
+
+        // 查询订单列表
+        List<OrderVO> orders = orderService.getUserOrders(loginUser.getId());
+
+        return ResultUtils.success(orders);
+    }
+
+    /**
+     * 根据订单号查询订单详情
+     */
+    @GetMapping("/order/{orderNo}")
+    @AuthCheck(mustRole = UserConstant.DEFAULT_ROLE)
+    public BaseResponse<OrderVO> getOrderDetail(@PathVariable("orderNo") String orderNo, 
+                                               HttpServletRequest httpRequest) {
+        // 参数校验
+        if (orderNo == null || orderNo.trim().isEmpty()) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+
+        // 获取当前用户（确保用户只能查看自己的订单）
+        User loginUser = userService.getLoginUser(httpRequest);
+
+        // 查询订单详情
+        OrderVO order = orderService.getOrderByOrderNo(orderNo);
+        
+        // 检查订单是否属于当前用户
+        if (!order.getUserId().equals(loginUser.getId())) {
+            throw new BusinessException(ErrorCode.NO_AUTH_ERROR, "无权查看此订单");
+        }
+
+        return ResultUtils.success(order);
+    }
+
+    /**
+     * 模拟支付成功（用于演示）
+     */
+    @PostMapping("/order/simulate-pay/{orderNo}")
+    @AuthCheck(mustRole = UserConstant.DEFAULT_ROLE)
+    public BaseResponse<Boolean> simulatePayment(@PathVariable("orderNo") String orderNo, 
+                                               HttpServletRequest httpRequest) {
+        // 参数校验
+        if (orderNo == null || orderNo.trim().isEmpty()) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+
+        // 获取当前用户
+        User loginUser = userService.getLoginUser(httpRequest);
+
+        // 先检查订单是否属于当前用户
+        OrderVO order = orderService.getOrderByOrderNo(orderNo);
+        if (!order.getUserId().equals(loginUser.getId())) {
+            throw new BusinessException(ErrorCode.NO_AUTH_ERROR, "无权操作此订单");
+        }
+
+        // 模拟支付成功
+        boolean result = orderService.simulatePaymentSuccess(orderNo);
+
+        return ResultUtils.success(result);
+    }
+
+    /**
+     * 取消订单
+     */
+    @PostMapping("/order/cancel/{orderNo}")
+    @AuthCheck(mustRole = UserConstant.DEFAULT_ROLE)
+    public BaseResponse<Boolean> cancelOrder(@PathVariable("orderNo") String orderNo, 
+                                           HttpServletRequest httpRequest) {
+        // 参数校验
+        if (orderNo == null || orderNo.trim().isEmpty()) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+
+        // 获取当前用户
+        User loginUser = userService.getLoginUser(httpRequest);
+
+        // 先检查订单是否属于当前用户
+        OrderVO order = orderService.getOrderByOrderNo(orderNo);
+        if (!order.getUserId().equals(loginUser.getId())) {
+            throw new BusinessException(ErrorCode.NO_AUTH_ERROR, "无权操作此订单");
+        }
+
+        // 取消订单
+        boolean result = orderService.cancelOrder(orderNo);
 
         return ResultUtils.success(result);
     }

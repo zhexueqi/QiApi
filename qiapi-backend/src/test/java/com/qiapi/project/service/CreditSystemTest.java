@@ -1,7 +1,10 @@
 package com.qiapi.project.service;
 
+import com.qiapi.project.model.dto.credit.PackagePurchaseRequest;
 import com.qiapi.project.model.vo.CreditBalanceVO;
 import com.qiapi.project.model.vo.PointBalanceVO;
+import com.qiapi.project.model.vo.OrderVO;
+import com.qiapi.project.service.OrderService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
@@ -23,6 +26,9 @@ public class CreditSystemTest {
 
     @Resource
     private PointService pointService;
+
+    @Resource
+    private OrderService orderService;
 
     private static final Long TEST_USER_ID = 1L;
     private static final Long TEST_INTERFACE_ID = 1L;
@@ -127,5 +133,85 @@ public class CreditSystemTest {
         // 测试积分充足性检查
         assertTrue(pointService.checkPointsSufficient(TEST_USER_ID, 100L));
         assertFalse(pointService.checkPointsSufficient(TEST_USER_ID, 150L));
+    }
+
+    @Test
+    public void testOrderCreationAndPayment() {
+        // 初始化积分账户
+        pointService.initUserPoints(TEST_USER_ID);
+        
+        // 增加一些积分用于测试
+        pointService.earnPoints(TEST_USER_ID, 400L, "测试增加积分");
+
+        // 创建订单请求（使用积分支付）
+        PackagePurchaseRequest request = new PackagePurchaseRequest();
+        request.setPackageId(1L); // 假设有ID为1的套餐
+        request.setPaymentType("POINTS");
+
+        // 创建订单
+        String orderNo = orderService.createOrder(TEST_USER_ID, request);
+        assertNotNull(orderNo);
+        assertTrue(orderNo.startsWith("ORDER_"));
+
+        // 查询订单详情
+        OrderVO order = orderService.getOrderByOrderNo(orderNo);
+        assertNotNull(order);
+        assertEquals("PENDING", order.getOrderStatus());
+        assertEquals(TEST_USER_ID, order.getUserId());
+
+        // 模拟支付成功
+        boolean paymentResult = orderService.simulatePaymentSuccess(orderNo);
+        assertTrue(paymentResult);
+
+        // 检查订单状态
+        OrderVO updatedOrder = orderService.getOrderByOrderNo(orderNo);
+        assertEquals("COMPLETED", updatedOrder.getOrderStatus());
+        assertNotNull(updatedOrder.getPaymentTime());
+        assertNotNull(updatedOrder.getCompletionTime());
+    }
+
+    @Test
+    public void testOrderCancellation() {
+        // 创建订单
+        PackagePurchaseRequest request = new PackagePurchaseRequest();
+        request.setPackageId(1L);
+        request.setPaymentType("MONEY");
+
+        String orderNo = orderService.createOrder(TEST_USER_ID, request);
+        assertNotNull(orderNo);
+
+        // 取消订单
+        boolean cancelResult = orderService.cancelOrder(orderNo);
+        assertTrue(cancelResult);
+
+        // 检查订单状态
+        OrderVO cancelledOrder = orderService.getOrderByOrderNo(orderNo);
+        assertEquals("CANCELLED", cancelledOrder.getOrderStatus());
+    }
+
+    @Test
+    public void testGetUserOrders() {
+        // 创建多个订单
+        PackagePurchaseRequest request1 = new PackagePurchaseRequest();
+        request1.setPackageId(1L);
+        request1.setPaymentType("MONEY");
+
+        PackagePurchaseRequest request2 = new PackagePurchaseRequest();
+        request2.setPackageId(2L);
+        request2.setPaymentType("MONEY");
+
+        String orderNo1 = orderService.createOrder(TEST_USER_ID, request1);
+        String orderNo2 = orderService.createOrder(TEST_USER_ID, request2);
+
+        // 查询用户订单列表
+        List<OrderVO> orders = orderService.getUserOrders(TEST_USER_ID);
+        assertNotNull(orders);
+        assertTrue(orders.size() >= 2);
+
+        // 检查订单是否按创建时间降序排列
+        for (int i = 0; i < orders.size() - 1; i++) {
+            assertTrue(orders.get(i).getCreateTime().after(orders.get(i + 1).getCreateTime()) ||
+                      orders.get(i).getCreateTime().equals(orders.get(i + 1).getCreateTime()));
+        }
     }
 }
