@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.qiapi.project.common.ErrorCode;
 import com.qiapi.project.exception.BusinessException;
+import com.qiapi.project.mapper.InterfaceInfoMapper;
 import com.qiapi.project.mapper.UserCreditMapper;
 import com.qiapi.project.mapper.CreditRecordMapper;
 import com.qiapi.project.model.vo.CreditBalanceVO;
@@ -14,6 +15,7 @@ import com.qiapi.qiapicommon.model.entity.CreditRecord;
 import com.qiapi.qiapicommon.model.entity.InterfaceInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,6 +24,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static com.qiapi.project.constant.CreditConstant.COMMON_CREDIT_ID;
 
 /**
  * 额度服务实现
@@ -41,6 +45,8 @@ public class CreditServiceImpl extends ServiceImpl<UserCreditMapper, UserCredit>
 
     private static final Long FREE_CREDIT_AMOUNT = 100L;
     private static final Long POINT_TO_CREDIT_RATIO = 10L; // 10积分 = 1次额度
+    @Autowired
+    private InterfaceInfoMapper interfaceInfoMapper;
 
     @Override
     @Transactional(rollbackFor = Exception.class)
@@ -51,9 +57,9 @@ public class CreditServiceImpl extends ServiceImpl<UserCreditMapper, UserCredit>
 
         // 查询是否已存在记录
         QueryWrapper<UserCredit> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("user_id", userId)
-                   .eq("interface_id", interfaceId)
-                   .eq("is_delete", 0);
+        queryWrapper.eq("userId", userId)
+                   .eq("interfaceId", interfaceId)
+                   .eq("isDelete", 0);
         UserCredit existingCredit = this.getOne(queryWrapper);
 
         if (existingCredit != null) {
@@ -90,7 +96,10 @@ public class CreditServiceImpl extends ServiceImpl<UserCreditMapper, UserCredit>
             newCredit.setCreateTime(new Date());
             newCredit.setUpdateTime(new Date());
             newCredit.setIsDelete(0);
-            
+            InterfaceInfo interfaceInfo = interfaceInfoMapper.selectById(interfaceId);
+            // TODO: 修复UserCredit实体的interfaceName字段问题
+            // newCredit.setInterfaceName(interfaceInfo.getName());
+
             boolean saveResult = this.save(newCredit);
             
             if (saveResult) {
@@ -118,13 +127,24 @@ public class CreditServiceImpl extends ServiceImpl<UserCreditMapper, UserCredit>
 
         // 获取当前额度信息
         QueryWrapper<UserCredit> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("user_id", userId)
-                   .eq("interface_id", interfaceId)
-                   .eq("is_delete", 0);
+        queryWrapper.eq("userId", userId)
+                   .eq("interfaceId", interfaceId)
+                   .eq("isDelete", 0);
         UserCredit userCredit = this.getOne(queryWrapper);
-        
+
         if (userCredit == null) {
-            throw new BusinessException(ErrorCode.NOT_FOUND_ERROR, "未找到额度记录");
+            //检查用户是否有通用额度
+            queryWrapper = new QueryWrapper<>();
+            queryWrapper.eq("userId", userId)
+                    .eq("interfaceId", COMMON_CREDIT_ID)
+                       .eq("isDelete", 0);
+            userCredit = this.getOne(queryWrapper);
+            if (userCredit == null) {
+                log.error("未找到用户额度信息");
+                throw new BusinessException(ErrorCode.NOT_FOUND_ERROR, "未找到通用额度记录");
+            }
+            userCredit.setInterfaceId(COMMON_CREDIT_ID);
+            interfaceId = COMMON_CREDIT_ID;
         }
 
         Long balanceBefore = userCredit.getRemainingCredit();
@@ -145,15 +165,15 @@ public class CreditServiceImpl extends ServiceImpl<UserCreditMapper, UserCredit>
     @Transactional(rollbackFor = Exception.class)
     public boolean rechargeCredit(Long userId, Long interfaceId, Long amount, String description) {
         if (userId == null || interfaceId == null || amount == null || 
-            userId <= 0 || interfaceId <= 0 || amount <= 0) {
+            userId <= 0 || interfaceId <= -2 || amount <= 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
 
         // 查询是否已存在记录
         QueryWrapper<UserCredit> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("user_id", userId)
-                   .eq("interface_id", interfaceId)
-                   .eq("is_delete", 0);
+        queryWrapper.eq("userId", userId)
+                   .eq("interfaceId", interfaceId)
+                   .eq("isDelete", 0);
         UserCredit existingCredit = this.getOne(queryWrapper);
 
         if (existingCredit != null) {
@@ -172,6 +192,8 @@ public class CreditServiceImpl extends ServiceImpl<UserCreditMapper, UserCredit>
             UserCredit newCredit = new UserCredit();
             newCredit.setUserId(userId);
             newCredit.setInterfaceId(interfaceId);
+            // TODO: 修复UserCredit实体的interfaceName字段问题
+            // newCredit.setInterfaceName(interfaceInfoMapper.selectById(interfaceId).getName());
             newCredit.setTotalCredit(amount);
             newCredit.setUsedCredit(0L);
             newCredit.setRemainingCredit(amount);
@@ -233,9 +255,9 @@ public class CreditServiceImpl extends ServiceImpl<UserCreditMapper, UserCredit>
         }
 
         QueryWrapper<UserCredit> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("user_id", userId)
-                   .eq("is_delete", 0)
-                   .orderByDesc("update_time");
+        queryWrapper.eq("userId", userId)
+                   .eq("isDelete", 0)
+                   .orderByDesc("updateTime");
         List<UserCredit> userCredits = this.list(queryWrapper);
 
         // TODO: 关联查询接口信息，获取接口名称
@@ -243,8 +265,8 @@ public class CreditServiceImpl extends ServiceImpl<UserCreditMapper, UserCredit>
             CreditBalanceVO vo = new CreditBalanceVO();
             BeanUtils.copyProperties(userCredit, vo);
             vo.setFreeApplied(userCredit.getFreeApplied() == 1);
-            // 这里需要查询接口信息获取接口名称
-            vo.setInterfaceName("接口名称"); // 临时设置，需要后续完善
+            // TODO: 修复UserCredit实体的interfaceName字段问题
+            // vo.setInterfaceName(userCredit.getInterfaceName());
             return vo;
         }).collect(Collectors.toList());
     }
@@ -257,17 +279,39 @@ public class CreditServiceImpl extends ServiceImpl<UserCreditMapper, UserCredit>
         }
 
         QueryWrapper<UserCredit> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("user_id", userId)
-                   .eq("interface_id", interfaceId)
-                   .eq("is_delete", 0)
+        queryWrapper.eq("userId", userId)
+                   .eq("interfaceId", interfaceId)
+                   .eq("isDelete", 0)
                    .eq("status", 1);
         UserCredit userCredit = this.getOne(queryWrapper);
-
+        // 1. 先判断用户对于该接口是否有申请专门的额度
         if (userCredit == null) {
-            return false;
+            queryWrapper = new QueryWrapper<>();
+            queryWrapper.eq("userId", userId)
+                    .eq("interfaceId", COMMON_CREDIT_ID)
+                    .eq("isDelete", 0)
+                    .eq("status", 1);
+            userCredit = this.getOne(queryWrapper);
+            if (userCredit == null) {
+                return false;
+            }
         }
+        // 2. 如果有，判断当前的专用额度是否足够
+        boolean sufficient = userCredit.getRemainingCredit() >= amount;
+        if (!sufficient) {
+            // 3. 如果不够，判断通用额度是否足够
+            queryWrapper = new QueryWrapper<>();
+            queryWrapper.eq("userId", userId)
+                    .eq("interfaceId", COMMON_CREDIT_ID)
+                    .eq("isDelete", 0)
+                    .eq("status", 1);
+            userCredit = this.getOne(queryWrapper);
+            sufficient = userCredit.getRemainingCredit() >= amount;
+            return sufficient;
+        }
+        // 足够，使用专用额度
+        return true;
 
-        return userCredit.getRemainingCredit() >= amount;
     }
 
     /**

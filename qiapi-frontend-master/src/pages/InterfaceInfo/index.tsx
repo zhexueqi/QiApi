@@ -6,12 +6,14 @@ import {
   invokeInterfaceInfoUsingPOST,
 } from '@/services/yuapi-backend/interfaceInfoController';
 import { useParams } from '@@/exports';
+import { useModel } from '@umijs/max';
 
 /**
  * 主页
  * @constructor
  */
 const Index: React.FC = () => {
+  const { initialState } = useModel('@@initialState');
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<API.InterfaceInfo>();
   const [invokeRes, setInvokeRes] = useState<any>();
@@ -56,11 +58,21 @@ const Index: React.FC = () => {
       }
     }
 
+    // 检查用户是否登录
+    if (!initialState?.loginUser?.id) {
+      message.error('请先登录');
+      return;
+    }
+
     setInvokeLoading(true);
     try {
       const res = await invokeInterfaceInfoUsingPOST({
         id: Number(params.id),
         userRequestParams: values.userRequestParams,
+      }, {
+        headers: {
+          'userId': String(initialState.loginUser.id),
+        },
       });
       setInvokeRes(res.data);
       message.success('请求成功');

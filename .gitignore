@@ -141,3 +141,7 @@ fabric.properties
 /.gitignore
 
 **/node_modules
+
+# Nacos运行时生成的文件
+/qiapi-backend/nacos/data/
+/qiapi-backend/nacos/logs/

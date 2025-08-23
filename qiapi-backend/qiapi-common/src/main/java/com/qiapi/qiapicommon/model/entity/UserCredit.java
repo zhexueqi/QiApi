@@ -8,6 +8,7 @@ import java.util.Date;
 
 /**
  * 用户接口额度实体
+ * @author zhexueqi
  */
 @TableName(value = "user_credit")
 @Data
@@ -28,6 +29,11 @@ public class UserCredit implements Serializable {
      * 接口ID
      */
     private Long interfaceId;
+
+    /**
+     * 接口名称
+     */
+    private String interfaceName;
 
     /**
      * 总额度
@@ -77,4 +83,13 @@ public class UserCredit implements Serializable {
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
+
+    // 手动添加interfaceName的getter和setter方法
+    public String getInterfaceName() {
+        return interfaceName;
+    }
+
+    public void setInterfaceName(String interfaceName) {
+        this.interfaceName = interfaceName;
+    }
 }

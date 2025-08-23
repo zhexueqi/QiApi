@@ -113,11 +113,14 @@ const KeyManagement: React.FC = () => {
   };
 
   // 确认已保存密钥
-  const handleKeySaved = () => {
-    setKeyInfo(newGeneratedKeys);
-    setShowSecretKey(true);
+  const handleKeySaved = async () => {
     setKeyDisplayModalVisible(false);
     setNewGeneratedKeys(undefined);
+    // 重新获取最新的密钥信息
+    await loadKeyInfo();
+    // 默认显示密钥（因为用户刚刚保存了密钥）
+    setShowSecretKey(true);
+    message.success('密钥信息已更新');
   };
 
   // 获取显示的SecretKey

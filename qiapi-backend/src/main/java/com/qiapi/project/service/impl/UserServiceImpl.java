@@ -290,4 +290,19 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
                 sortField);
         return queryWrapper;
     }
+
+    @Override
+    public Boolean updatePassword(String oldPassword, String newPassword, HttpServletRequest request) {
+        User loginUser = this.getLoginUser(request);
+        if (loginUser == null){
+            throw new BusinessException(ErrorCode.NOT_LOGIN_ERROR);
+        }
+        if (StringUtils.isAnyBlank(oldPassword, newPassword)){
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        String encryptPassword = DigestUtils.md5DigestAsHex((SALT + newPassword).getBytes());
+
+        loginUser.setUserPassword(encryptPassword);
+        return this.updateById(loginUser);
+    }
 }

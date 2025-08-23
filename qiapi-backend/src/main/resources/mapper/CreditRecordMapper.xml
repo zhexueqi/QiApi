@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qiapi.project.mapper.CreditRecordMapper">
+
+    <!-- 获取指定日期范围内的额度操作趋势 -->
+    <select id="getCreditTrendByDateRange" resultType="com.qiapi.project.model.vo.CreditTrendVO">
+        SELECT 
+            DATE(cr.createTime) as date,
+            SUM(CASE WHEN cr.operationType = 'CONSUME' THEN cr.creditChange ELSE 0 END) as dailyConsumed,
+            SUM(CASE WHEN cr.operationType = 'RECHARGE' THEN cr.creditChange ELSE 0 END) as dailyRecharged,
+            COUNT(DISTINCT cr.userId) as activeUsers,
+            COUNT(DISTINCT CASE WHEN u.createTime >= DATE(cr.createTime) THEN cr.userId END) as newUsers,
+            CONCAT('{',
+                '"CONSUME":', COALESCE(SUM(CASE WHEN cr.operationType = 'CONSUME' THEN 1 ELSE 0 END), 0), ',',
+                '"RECHARGE":', COALESCE(SUM(CASE WHEN cr.operationType = 'RECHARGE' THEN 1 ELSE 0 END), 0), ',',
+                '"TRANSFER":', COALESCE(SUM(CASE WHEN cr.operationType = 'TRANSFER' THEN 1 ELSE 0 END), 0), ',',
+                '"REFUND":', COALESCE(SUM(CASE WHEN cr.operationType = 'REFUND' THEN 1 ELSE 0 END), 0),
+                '}') as operationDistribution
+        FROM credit_records cr
+        LEFT JOIN user u ON cr.userId = u.id
+        WHERE DATE(cr.createTime) BETWEEN #{startDate} AND #{endDate}
+        GROUP BY DATE(cr.createTime)
+        ORDER BY date DESC
+    </select>
+
+    <!-- 获取最近N天的额度操作趋势 -->
+    <select id="getRecentCreditTrend" resultType="com.qiapi.project.model.vo.CreditTrendVO">
+        SELECT 
+            DATE(cr.createTime) as date,
+            SUM(CASE WHEN cr.operationType = 'CONSUME' THEN cr.creditChange ELSE 0 END) as dailyConsumed,
+            SUM(CASE WHEN cr.operationType = 'RECHARGE' THEN cr.creditChange ELSE 0 END) as dailyRecharged,
+            COUNT(DISTINCT cr.userId) as activeUsers,
+            COUNT(DISTINCT CASE WHEN DATE(u.createTime) = DATE(cr.createTime) THEN cr.userId END) as newUsers,
+            CONCAT('{',
+                '"CONSUME":', COALESCE(SUM(CASE WHEN cr.operationType = 'CONSUME' THEN 1 ELSE 0 END), 0), ',',
+                '"RECHARGE":', COALESCE(SUM(CASE WHEN cr.operationType = 'RECHARGE' THEN 1 ELSE 0 END), 0), ',',
+                '"TRANSFER":', COALESCE(SUM(CASE WHEN cr.operationType = 'TRANSFER' THEN 1 ELSE 0 END), 0), ',',
+                '"REFUND":', COALESCE(SUM(CASE WHEN cr.operationType = 'REFUND' THEN 1 ELSE 0 END), 0),
+                '}') as operationDistribution
+        FROM credit_records cr
+        LEFT JOIN user u ON cr.userId = u.id
+        WHERE cr.createTime >= DATE_SUB(CURDATE(), INTERVAL #{days} DAY)
+        GROUP BY DATE(cr.createTime)
+        ORDER BY date DESC
+    </select>
+
+</mapper>

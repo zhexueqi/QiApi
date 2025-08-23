@@ -3,6 +3,17 @@ export default [
   { path: '/interface_info/:id', name: '查看接口', icon: 'smile', component: './InterfaceInfo', hideInMenu: true },
   { path: '/profile', name: '个人中心', icon: 'user', component: './Profile' },
   {
+    path: '/credit',
+    name: '额度管理',
+    icon: 'wallet',
+    routes: [
+      { name: '额度总览', icon: 'dashboard', path: '/credit/dashboard', component: './Credit' },
+      { name: '积分管理', icon: 'gift', path: '/credit/points', component: './Credit/Points' },
+      { name: '套餐购买', icon: 'shopping', path: '/credit/package', component: './Credit/Package' },
+      { name: '订单管理', icon: 'file-text', path: '/credit/orders', component: './Credit/Orders' },
+    ],
+  },
+  {
     path: '/user',
     layout: false,
     routes: [{ name: '登录', path: '/user/login', component: './User/Login' }],

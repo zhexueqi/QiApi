@@ -8,18 +8,17 @@ import com.qiapi.project.common.ResultUtils;
 import com.qiapi.project.constant.UserConstant;
 import com.qiapi.project.exception.BusinessException;
 import com.qiapi.project.model.dto.credit.CreditApplyRequest;
-import com.qiapi.project.model.dto.credit.PointExchangeRequest;
 import com.qiapi.project.model.dto.credit.PackagePurchaseRequest;
+import com.qiapi.project.model.dto.credit.PointExchangeRequest;
 import com.qiapi.project.model.vo.CreditBalanceVO;
 import com.qiapi.project.model.vo.CreditPackageVO;
+import com.qiapi.project.model.vo.OrderVO;
 import com.qiapi.project.model.vo.PointBalanceVO;
-import com.qiapi.project.model.vo.OrderVO;
-import com.qiapi.project.model.vo.OrderVO;
+import com.qiapi.project.service.CreditService;
 import com.qiapi.project.service.OrderService;
 import com.qiapi.project.service.PointService;
-import com.qiapi.project.service.UserService;
-import com.qiapi.qiapicommon.model.entity.User;
 import com.qiapi.qiapicommon.model.entity.CreditPackage;
+import com.qiapi.qiapicommon.model.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
@@ -47,7 +46,7 @@ public class CreditController {
     private PointService pointService;
 
     @Resource
-    private UserService userService;
+    private com.qiapi.service.UserService userService;
 
     @Resource
     private com.qiapi.project.service.CreditPackageService creditPackageService;
@@ -137,8 +136,8 @@ public class CreditController {
         // 查询上架的套餐
         QueryWrapper<CreditPackage> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("status", 1)
-                   .eq("is_delete", 0)
-                   .orderByAsc("sort_order");
+                   .eq("isDelete", 0)
+                   .orderByAsc("sortOrder");
         
         List<CreditPackage> packages = creditPackageService.list(queryWrapper);
         

@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Param;
 
 /**
  * 用户积分数据库操作
+ * @author zhexueqi
  */
 @Mapper
 public interface UserPointsMapper extends BaseMapper<UserPoints> {

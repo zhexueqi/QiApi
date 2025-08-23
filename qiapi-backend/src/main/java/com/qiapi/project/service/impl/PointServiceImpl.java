@@ -109,7 +109,7 @@ public class PointServiceImpl extends ServiceImpl<UserPointsMapper, UserPoints> 
 
         // 检查是否已存在
         QueryWrapper<UserPoints> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("user_id", userId).eq("is_delete", 0);
+        queryWrapper.eq("userId", userId).eq("isDelete", 0);
         UserPoints existingPoints = this.getOne(queryWrapper);
 
         if (existingPoints != null) {
@@ -152,7 +152,7 @@ public class PointServiceImpl extends ServiceImpl<UserPointsMapper, UserPoints> 
      */
     private void ensureUserPointsExists(Long userId) {
         QueryWrapper<UserPoints> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("user_id", userId).eq("is_delete", 0);
+        queryWrapper.eq("userId", userId).eq("isDelete", 0);
         UserPoints userPoints = this.getOne(queryWrapper);
 
         if (userPoints == null) {
@@ -165,7 +165,7 @@ public class PointServiceImpl extends ServiceImpl<UserPointsMapper, UserPoints> 
      */
     private UserPoints getUserPointsByUserId(Long userId) {
         QueryWrapper<UserPoints> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("user_id", userId).eq("is_delete", 0);
+        queryWrapper.eq("userId", userId).eq("isDelete", 0);
         UserPoints userPoints = this.getOne(queryWrapper);
 
         if (userPoints == null) {

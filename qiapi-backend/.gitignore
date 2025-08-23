@@ -147,3 +147,6 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 
 /.gitignore
+
+.nacos/data/**
+.nacos/logs/**

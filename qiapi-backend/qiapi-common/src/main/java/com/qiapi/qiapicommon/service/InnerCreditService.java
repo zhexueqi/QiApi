@@ -22,4 +22,22 @@ public interface InnerCreditService {
      * @return 是否成功
      */
     boolean consumeCredit(Long userId, Long interfaceId, Long amount);
+
+    /**
+     * 基于SessionID检查用户接口额度是否充足
+     * @param sessionId SessionID
+     * @param interfaceId 接口ID
+     * @param amount 需要的额度
+     * @return 是否充足
+     */
+    boolean checkCreditSufficientBySession(String sessionId, Long interfaceId, Long amount);
+
+    /**
+     * 基于SessionID消费接口额度
+     * @param sessionId SessionID
+     * @param interfaceId 接口ID
+     * @param amount 消费数量
+     * @return 是否成功
+     */
+    boolean consumeCreditBySession(String sessionId, Long interfaceId, Long amount);
 }

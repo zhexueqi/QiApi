@@ -4,48 +4,111 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.qiapi.project.mapper.UserCreditMapper">
 
-    <resultMap id="BaseResultMap" type="com.qiapi.qiapicommon.model.entity.UserCredit">
-        <id property="id" column="id" jdbcType="BIGINT"/>
-        <result property="userId" column="user_id" jdbcType="BIGINT"/>
-        <result property="interfaceId" column="interface_id" jdbcType="BIGINT"/>
-        <result property="totalCredit" column="total_credit" jdbcType="BIGINT"/>
-        <result property="usedCredit" column="used_credit" jdbcType="BIGINT"/>
-        <result property="remainingCredit" column="remaining_credit" jdbcType="BIGINT"/>
-        <result property="freeApplied" column="free_applied" jdbcType="TINYINT"/>
-        <result property="status" column="status" jdbcType="TINYINT"/>
-        <result property="expireTime" column="expire_time" jdbcType="TIMESTAMP"/>
-        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
-        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
-        <result property="isDelete" column="is_delete" jdbcType="TINYINT"/>
-    </resultMap>
-
-    <sql id="Base_Column_List">
-        id,user_id,interface_id,total_credit,used_credit,remaining_credit,
-        free_applied,status,expire_time,create_time,update_time,is_delete
-    </sql>
-
     <!-- 扣减用户接口额度 -->
     <update id="deductCredit">
         UPDATE user_credit 
-        SET used_credit = used_credit + #{amount},
-            remaining_credit = remaining_credit - #{amount},
-            update_time = NOW()
-        WHERE user_id = #{userId} 
-          AND interface_id = #{interfaceId} 
-          AND remaining_credit >= #{amount}
-          AND is_delete = 0
+        SET usedCredit = usedCredit + #{amount},
+            remainingCredit = remainingCredit - #{amount},
+            updateTime = NOW()
+        WHERE userid = #{userId} 
+          AND interfaceId = #{interfaceId} 
+          AND remainingCredit >= #{amount}
           AND status = 1
+          AND isDelete = 0
     </update>
 
     <!-- 增加用户接口额度 -->
     <update id="addCredit">
         UPDATE user_credit 
-        SET total_credit = total_credit + #{amount},
-            remaining_credit = remaining_credit + #{amount},
-            update_time = NOW()
-        WHERE user_id = #{userId} 
-          AND interface_id = #{interfaceId}
-          AND is_delete = 0
+        SET totalCredit = totalCredit + #{amount},
+            remainingCredit = remainingCredit + #{amount},
+            updateTime = NOW()
+        WHERE userid = #{userId} 
+          AND interfaceId = #{interfaceId}
+          AND isDelete = 0
     </update>
+
+    <!-- 获取接口额度使用排行榜 -->
+    <select id="listTopCreditConsumedInterfaces" resultType="com.qiapi.project.model.vo.CreditAnalysisVO">
+        SELECT 
+            uc.interfaceId as interfaceId,
+            ii.name as interfaceName,
+            SUM(uc.usedCredit) as totalCreditConsumed,
+            SUM(uc.remainingCredit) as totalRemainingCredit,
+            COUNT(DISTINCT uc.userid) as userCount,
+            ROUND(SUM(uc.usedCredit) / COUNT(DISTINCT uc.userid), 2) as avgCreditPerUser
+        FROM user_credit uc
+        LEFT JOIN interface_info ii ON uc.interfaceId = ii.id
+        WHERE uc.isDelete = 0 
+          AND uc.status = 1
+          AND ii.isDelete = 0
+        GROUP BY uc.interfaceId, ii.name
+        ORDER BY totalCreditConsumed DESC
+        LIMIT #{limit}
+    </select>
+
+    <!-- 获取用户额度消费排行榜 -->
+    <select id="listTopCreditConsumingUsers" resultType="com.qiapi.project.model.vo.UserCreditStatsVO">
+        SELECT 
+            uc.userid as userId,
+            u.userName as userName,
+            SUM(uc.usedCredit) as totalConsumedCredit,
+            SUM(uc.remainingCredit) as totalRemainingCredit,
+            COUNT(DISTINCT uc.interfaceId) as activeInterfaceCount,
+            ROUND(SUM(uc.usedCredit) / COUNT(DISTINCT uc.interfaceId), 2) as avgCreditPerInterface
+        FROM user_credit uc
+        LEFT JOIN user u ON uc.userid = u.id
+        WHERE uc.isDelete = 0 
+          AND uc.status = 1
+          AND u.isDelete = 0
+        GROUP BY uc.userid, u.userName
+        ORDER BY totalConsumedCredit DESC
+        LIMIT #{limit}
+    </select>
+
+    <!-- 获取所有接口的额度统计信息 -->
+    <select id="getAllInterfacesCreditStats" resultType="com.qiapi.project.model.vo.CreditAnalysisVO">
+        SELECT 
+            uc.interfaceId as interfaceId,
+            ii.name as interfaceName,
+            SUM(uc.usedCredit) as totalCreditConsumed,
+            SUM(uc.remainingCredit) as totalRemainingCredit,
+            COUNT(DISTINCT uc.userid) as userCount,
+            CASE 
+                WHEN COUNT(DISTINCT uc.userid) > 0 
+                THEN ROUND(SUM(uc.usedCredit) / COUNT(DISTINCT uc.userid), 2) 
+                ELSE 0 
+            END as avgCreditPerUser
+        FROM user_credit uc
+        LEFT JOIN interface_info ii ON uc.interfaceId = ii.id
+        WHERE uc.isDelete = 0 
+          AND ii.isDelete = 0
+        GROUP BY uc.interfaceId, ii.name
+        ORDER BY totalCreditConsumed DESC
+    </select>
+
+    <!-- 获取低额度用户列表 -->
+    <select id="listLowCreditUsers" resultType="com.qiapi.project.model.vo.UserCreditStatsVO">
+        SELECT 
+            uc.userId as userId,
+            u.userName as userName,
+            SUM(uc.usedCredit) as totalConsumedCredit,
+            SUM(uc.remainingCredit) as totalRemainingCredit,
+            COUNT(DISTINCT uc.interfaceId) as activeInterfaceCount,
+            CASE 
+                WHEN COUNT(DISTINCT uc.interfaceId) > 0 
+                THEN ROUND(SUM(uc.usedcredit) / COUNT(DISTINCT uc.interfaceId), 2) 
+                ELSE 0 
+            END as avgCreditPerInterface
+        FROM user_credit uc
+        LEFT JOIN user u ON uc.userid = u.id
+        WHERE uc.isDelete = 0 
+          AND uc.status = 1
+          AND u.isDelete = 0
+        GROUP BY uc.userid, u.userName
+        HAVING SUM(uc.remainingCredit) &lt;= #{threshold}
+        ORDER BY totalRemainingCredit ASC
+        LIMIT #{limit}
+    </select>
 
 </mapper>

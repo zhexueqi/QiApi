@@ -600,4 +600,177 @@ declare namespace API {
   type View = {
     contentType?: string;
   };
+
+  // 额度系统相关类型定义
+  type CreditApplyRequest = {
+    interfaceId?: number;
+  };
+
+  type PointExchangeRequest = {
+    interfaceId?: number;
+    pointAmount?: number;
+  };
+
+  type PackagePurchaseRequest = {
+    packageId?: number;
+    paymentType?: string;
+    pointsUsed?: number;
+  };
+
+  type CreditBalanceVO = {
+    interfaceId?: number;
+    interfaceName?: string;
+    totalCredit?: number;
+    usedCredit?: number;
+    remainingCredit?: number;
+    freeApplied?: boolean;
+    status?: number;
+    expireTime?: string;
+  };
+
+  type PointBalanceVO = {
+    totalPoints?: number;
+    availablePoints?: number;
+    frozenPoints?: number;
+  };
+
+  type CreditPackageVO = {
+    id?: number;
+    packageName?: string;
+    packageType?: string;
+    creditAmount?: number;
+    price?: number;
+    pointsPrice?: number;
+    validityDays?: number;
+    description?: string;
+    isRecommended?: boolean;
+  };
+
+  type OrderVO = {
+    id?: number;
+    orderNo?: string;
+    packageId?: number;
+    packageName?: string;
+    creditAmount?: number;
+    originalPrice?: number;
+    actualPrice?: number;
+    paymentType?: string;
+    pointsUsed?: number;
+    moneyPaid?: number;
+    orderStatus?: string;
+    paymentTime?: string;
+    completionTime?: string;
+    expireTime?: string;
+    createTime?: string;
+  };
+
+  type BaseResponseListCreditBalanceVO = {
+    code?: number;
+    data?: CreditBalanceVO[];
+    message?: string;
+  };
+
+  type BaseResponsePointBalanceVO = {
+    code?: number;
+    data?: PointBalanceVO;
+    message?: string;
+  };
+
+  type BaseResponseListCreditPackageVO = {
+    code?: number;
+    data?: CreditPackageVO[];
+    message?: string;
+  };
+
+  type BaseResponseListOrderVO = {
+    code?: number;
+    data?: OrderVO[];
+    message?: string;
+  };
+
+  type BaseResponseOrderVO = {
+    code?: number;
+    data?: OrderVO;
+    message?: string;
+  };
+
+  type BaseResponsestring = {
+    code?: number;
+    data?: string;
+    message?: string;
+  };
+
+  type checkCreditSufficientUsingGETParams = {
+    /** 接口ID */
+    interfaceId?: number;
+    /** 额度数量 */
+    amount?: number;
+  };
+
+  type getOrderDetailUsingGETParams = {
+    /** 订单号 */
+    orderNo?: string;
+  };
+
+  type simulatePaymentUsingPOSTParams = {
+    /** 订单号 */
+    orderNo?: string;
+  };
+
+  type cancelOrderUsingPOSTParams = {
+    /** 订单号 */
+    orderNo?: string;
+  };
+
+  // ==================== 分析相关VO类型定义 ====================
+
+  /** 额度分析VO */
+  type CreditAnalysisVO = {
+    interfaceId?: number;
+    interfaceName?: string;
+    totalCreditConsumed?: number;
+    totalRemainingCredit?: number;
+    userCount?: number;
+    avgCreditPerUser?: number;
+  };
+
+  /** 用户额度统计VO */
+  type UserCreditStatsVO = {
+    userId?: number;
+    userName?: string;
+    totalConsumedCredit?: number;
+    totalRemainingCredit?: number;
+    activeInterfaceCount?: number;
+    avgCreditPerInterface?: number;
+  };
+
+  /** 额度趋势VO */
+  type CreditTrendVO = {
+    date?: string;
+    dailyConsumed?: number;
+    dailyRecharged?: number;
+    activeUsers?: number;
+    newUsers?: number;
+    operationDistribution?: string;
+  };
+
+  // ==================== 分析接口响应类型 ====================
+
+  type BaseResponseListCreditAnalysisVO = {
+    code?: number;
+    data?: CreditAnalysisVO[];
+    message?: string;
+  };
+
+  type BaseResponseListUserCreditStatsVO = {
+    code?: number;
+    data?: UserCreditStatsVO[];
+    message?: string;
+  };
+
+  type BaseResponseListCreditTrendVO = {
+    code?: number;
+    data?: CreditTrendVO[];
+    message?: string;
+  };
 }

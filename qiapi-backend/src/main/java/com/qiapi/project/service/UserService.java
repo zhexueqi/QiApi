@@ -119,4 +119,5 @@ public interface UserService extends IService<User> {
      */
     QueryWrapper<User> getQueryWrapper(UserQueryRequest userQueryRequest);
 
+    Boolean updatePassword(String oldPassword, String newPassword, HttpServletRequest request);
 }

@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 额度套餐数据库操作
+ * @author zhexueqi
  */
 @Mapper
 public interface CreditPackageMapper extends BaseMapper<CreditPackage> {

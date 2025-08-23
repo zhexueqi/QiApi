@@ -2,8 +2,8 @@ package com.qiapi.project.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.google.gson.Gson;
-import com.qiapi.project.annotation.AuthCheck;
 import com.qiapi.client.QiApiClient;
+import com.qiapi.project.annotation.AuthCheck;
 import com.qiapi.project.common.*;
 import com.qiapi.project.constant.UserConstant;
 import com.qiapi.project.exception.BusinessException;
@@ -12,18 +12,20 @@ import com.qiapi.project.model.dto.interfaceinfo.InterfaceInfoAddRequest;
 import com.qiapi.project.model.dto.interfaceinfo.InterfaceInfoInvokeRequest;
 import com.qiapi.project.model.dto.interfaceinfo.InterfaceInfoQueryRequest;
 import com.qiapi.project.model.dto.interfaceinfo.InterfaceInfoUpdateRequest;
+import com.qiapi.project.model.vo.InterfaceInfoVO;
+import com.qiapi.project.service.CreditService;
 import com.qiapi.project.service.InterfaceInfoService;
 import com.qiapi.qiapicommon.model.entity.InterfaceInfo;
 import com.qiapi.qiapicommon.model.entity.User;
-import com.qiapi.project.model.vo.InterfaceInfoVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
+import com.qiapi.service.UserInterfaceInfoService;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 接口信息控制层
@@ -43,7 +45,8 @@ public class InterfaceInfoController {
 
     @Resource
     private QiApiClient qiApiClient;
-
+    @Resource
+    private CreditService creditService;
 
 
     /**
@@ -160,8 +163,8 @@ public class InterfaceInfoController {
      * @param request
      * @return
      */
-    @PostMapping("/list/page/vo")
-    public BaseResponse<Page<InterfaceInfoVO>> listInterfaceInfoVOByPage(@RequestBody InterfaceInfoQueryRequest interfaceInfoQueryRequest,
+    @GetMapping("/list/page/vo")
+    public BaseResponse<Page<InterfaceInfoVO>> listInterfaceInfoVOByPage(InterfaceInfoQueryRequest interfaceInfoQueryRequest,
                                                                          HttpServletRequest request) {
         long current = interfaceInfoQueryRequest.getCurrent();
         long size = interfaceInfoQueryRequest.getPageSize();
@@ -220,7 +223,7 @@ public class InterfaceInfoController {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
         long id = idRequest.getId();
-        boolean res =interfaceInfoService.offOnline(id,request);
+        boolean res = interfaceInfoService.offOnline(id, request);
         return ResultUtils.success(res);
     }
 
@@ -232,25 +235,29 @@ public class InterfaceInfoController {
         if (interfaceInfoInvokeRequest == null || interfaceInfoInvokeRequest.getId() <= 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
-        
+
         long id = interfaceInfoInvokeRequest.getId();
-        
+
         // 根据接口ID获取接口信息
         InterfaceInfo interfaceInfo = interfaceInfoService.getById(id);
         if (interfaceInfo == null) {
             throw new BusinessException(ErrorCode.NOT_FOUND_ERROR, "接口不存在");
         }
-        
+
         // 检查接口状态是否为上线状态
         if (interfaceInfo.getStatus() != 1) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR, "接口未上线");
         }
-        
         // 获取当前登录用户
         User loginUser = userService.getLoginUser(request);
+        // 检查额度是否充足
+        if (!creditService.checkCreditSufficient(loginUser.getId(), interfaceInfo.getId(), 1L)) {
+            throw new BusinessException(ErrorCode.OPERATION_ERROR, "额度不足");
+        }
+
         String accessKey = loginUser.getAccessKey();
         String secretKey = loginUser.getSecretKey();
-        
+
         try {
             // 根据接口信息动态调用对应的API
             Object result = invokeApiByInterfaceInfo(interfaceInfo, interfaceInfoInvokeRequest.getUserRequestParams(), accessKey, secretKey);
@@ -260,30 +267,30 @@ public class InterfaceInfoController {
             throw new BusinessException(ErrorCode.SYSTEM_ERROR, "接口调用失败: " + e.getMessage());
         }
     }
-    
+
     /**
      * 根据接口信息动态调用API
-     * 
-     * @param interfaceInfo 接口信息
+     *
+     * @param interfaceInfo     接口信息
      * @param userRequestParams 用户请求参数
-     * @param accessKey 访问密钥
-     * @param secretKey 秘钥
+     * @param accessKey         访问密钥
+     * @param secretKey         秘钥
      * @return 调用结果
      */
     private Object invokeApiByInterfaceInfo(InterfaceInfo interfaceInfo, String userRequestParams, String accessKey, String secretKey) {
         // 根据接口的URL和方法确定对应的API ID
         String apiId = getApiIdByInterface(interfaceInfo);
-        
+
         if (apiId == null) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR, "不支持的接口类型");
         }
-        
+
         // 创建新的QiApiClient实例（使用用户的密钥）
         QiApiClient userApiClient = createUserApiClient(accessKey, secretKey);
-        
+
         // 解析用户请求参数
         Object requestParams = parseUserRequestParams(userRequestParams, apiId);
-        
+
         // 调用API
         if (requestParams instanceof java.util.Map) {
             // 参数形式调用
@@ -299,7 +306,7 @@ public class InterfaceInfoController {
             apiRequest.setBody(requestParams);
             apiRequest.setAccessKey(accessKey);
             apiRequest.setSecretKey(secretKey);
-            
+
             com.qiapi.model.ApiResponse<Object> response = userApiClient.callApi(apiRequest, Object.class);
             if (response.isSuccess()) {
                 return response.getData();
@@ -308,24 +315,24 @@ public class InterfaceInfoController {
             }
         }
     }
-    
+
     /**
      * 根据接口信息获取对应的API ID
      */
     private String getApiIdByInterface(InterfaceInfo interfaceInfo) {
         String url = interfaceInfo.getUrl();
         String method = interfaceInfo.getMethod();
-        
+
         // 对于本地测试的qiapi-interface服务，仍然保持兼容
         // 支持路径匹配和完整URL匹配
         if (isLocalTestInterface(url)) {
             return getLocalTestApiId(url, method);
         }
-        
+
         // 对于其他第三方API，直接创建动态配置
         return createDynamicApiConfig(interfaceInfo);
     }
-    
+
     /**
      * 判断是否为本地测试接口
      */
@@ -336,7 +343,7 @@ public class InterfaceInfoController {
         }
         return false;
     }
-    
+
     /**
      * 获取本地测试接口的API ID
      */
@@ -352,7 +359,7 @@ public class InterfaceInfoController {
                 path = url;
             }
         }
-        
+
         // 根据路径和方法匹配预置的API ID
         if ("/api/name".equals(path)) {
             if ("GET".equalsIgnoreCase(method)) {
@@ -363,27 +370,27 @@ public class InterfaceInfoController {
         } else if ("/api/name/restful".equals(path) && "POST".equalsIgnoreCase(method)) {
             return "name.restful";
         }
-        
+
         // 如果没有匹配的预置接口，返回null让外层创建动态配置
         return null;
     }
-    
+
     /**
      * 动态创建API配置
      */
     private String createDynamicApiConfig(InterfaceInfo interfaceInfo) {
         String apiId = "dynamic." + interfaceInfo.getId();
-        
+
         // 创建动态API配置
         com.qiapi.model.ApiConfig apiConfig = new com.qiapi.model.ApiConfig();
         apiConfig.setApiId(apiId);
         apiConfig.setApiName(interfaceInfo.getName());
         apiConfig.setDescription(interfaceInfo.getDescription());
-        
+
         // 直接使用数据库中存储的完整URL，不需要baseUrl
         // 数据库中的URL应该是完整的第三方API地址，如: http://api.example.com/v1/user
         String fullUrl = interfaceInfo.getUrl();
-        
+
         // 解析URL获取baseUrl和path
         try {
             java.net.URL url = new java.net.URL(fullUrl);
@@ -395,39 +402,39 @@ public class InterfaceInfoController {
             if (path == null || path.isEmpty()) {
                 path = "/";
             }
-            
+
             apiConfig.setBaseUrl(baseUrl);
             apiConfig.setPath(path);
         } catch (java.net.MalformedURLException e) {
             // 如果URL格式不正确，抛出异常
             throw new BusinessException(ErrorCode.PARAMS_ERROR, "接口URL格式不正确: " + fullUrl);
         }
-        
+
         apiConfig.setMethod(interfaceInfo.getMethod());
         apiConfig.setRequireAuth(true);
         apiConfig.setAuthType("SIGNATURE");
         apiConfig.setResponseFormat("JSON");
         apiConfig.setStatus("ACTIVE");
         apiConfig.setVersion("1.0");
-        
+
         // 设置参数类型
         if ("GET".equalsIgnoreCase(interfaceInfo.getMethod())) {
             apiConfig.setParamType("QUERY");
         } else {
             apiConfig.setParamType("BODY");
         }
-        
+
         // 设置默认请求头
         Map<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
         apiConfig.setHeaders(headers);
-        
+
         // 添加到配置管理器
         qiApiClient.getApiConfigManager().addApiConfig(apiConfig);
-        
+
         return apiId;
     }
-    
+
     /**
      * 解析用户请求参数
      */
@@ -435,17 +442,18 @@ public class InterfaceInfoController {
         if (userRequestParams == null || userRequestParams.trim().isEmpty()) {
             return new java.util.HashMap<String, Object>();
         }
-        
+
         Gson gson = new Gson();
-        
+
         try {
             // 如果是name.restful接口，解析为User对象
             if ("name.restful".equals(apiId)) {
                 return gson.fromJson(userRequestParams, com.qiapi.model.User.class);
             }
-            
+
             // 其他情况尝试解析为Map
-            java.lang.reflect.Type type = new com.google.gson.reflect.TypeToken<java.util.Map<String, Object>>(){}.getType();
+            java.lang.reflect.Type type = new com.google.gson.reflect.TypeToken<java.util.Map<String, Object>>() {
+            }.getType();
             return gson.fromJson(userRequestParams, type);
         } catch (Exception e) {
             log.warn("参数解析失败，使用原始字符串: {}", e.getMessage());
@@ -455,18 +463,18 @@ public class InterfaceInfoController {
             return params;
         }
     }
-    
+
     /**
      * 创建用户专用的API客户端
      */
     private QiApiClient createUserApiClient(String accessKey, String secretKey) {
         // 使用用户的密钥创建新的客户端实例
-        return new QiApiClient(accessKey, secretKey, 
+        return new QiApiClient(accessKey, secretKey,
                 qiApiClient.getApiConfigManager(),
                 qiApiClient.getRequestBuilder(),
                 qiApiClient.getResponseHandler());
     }
-    
+
     /**
      * 获取所有可用的API列表
      */
@@ -475,7 +483,7 @@ public class InterfaceInfoController {
         java.util.List<com.qiapi.model.ApiConfig> apis = qiApiClient.getAvailableApis();
         return ResultUtils.success(apis);
     }
-    
+
     /**
      * 根据分类获取API列表
      */

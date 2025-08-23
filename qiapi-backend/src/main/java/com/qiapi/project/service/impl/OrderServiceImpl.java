@@ -154,7 +154,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 
         // 查询订单
         QueryWrapper<Order> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("order_no", orderNo).eq("is_delete", 0);
+        queryWrapper.eq("orderNo", orderNo).eq("isDelete", 0);
         Order order = this.getOne(queryWrapper);
 
         if (order == null) {
@@ -182,10 +182,10 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 
         // 更新订单状态为已支付
         UpdateWrapper<Order> updateWrapper = new UpdateWrapper<>();
-        updateWrapper.eq("order_no", orderNo)
-                    .set("order_status", "PAID")
-                    .set("payment_time", new Date())
-                    .set("update_time", new Date());
+        updateWrapper.eq("orderNo", orderNo)
+                    .set("orderStatus", "PAID")
+                    .set("paymentTime", new Date())
+                    .set("updateTime", new Date());
 
         boolean updateResult = this.update(updateWrapper);
         if (updateResult) {
@@ -207,7 +207,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 
         // 查询订单
         QueryWrapper<Order> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("order_no", orderNo).eq("is_delete", 0);
+        queryWrapper.eq("orderNo", orderNo).eq("isDelete", 0);
         Order order = this.getOne(queryWrapper);
 
         if (order == null) {
@@ -220,7 +220,8 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 
         try {
             // 为用户充值额度（这里需要知道是为哪个接口充值，暂时使用接口ID=1作为通用额度）
-            Long defaultInterfaceId = 1L; // 可以考虑将通用额度设计为一个特殊的接口ID
+            // 可以考虑将通用额度设计为一个特殊的接口ID
+            Long defaultInterfaceId = -1L;
             boolean rechargeResult = creditService.rechargeCredit(
                 order.getUserId(), 
                 defaultInterfaceId, 
@@ -234,10 +235,10 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 
             // 更新订单状态为已完成
             UpdateWrapper<Order> updateWrapper = new UpdateWrapper<>();
-            updateWrapper.eq("order_no", orderNo)
-                        .set("order_status", "COMPLETED")
-                        .set("completion_time", new Date())
-                        .set("update_time", new Date());
+            updateWrapper.eq("orderNo", orderNo)
+                        .set("orderStatus", "COMPLETED")
+                        .set("completionTime", new Date())
+                        .set("updateTime", new Date());
 
             boolean updateResult = this.update(updateWrapper);
             if (updateResult) {
@@ -267,7 +268,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 
         // 查询订单
         QueryWrapper<Order> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("order_no", orderNo).eq("is_delete", 0);
+        queryWrapper.eq("orderNo", orderNo).eq("isDelete", 0);
         Order order = this.getOne(queryWrapper);
 
         if (order == null) {
@@ -285,9 +286,9 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 
         // 更新订单状态为已取消
         UpdateWrapper<Order> updateWrapper = new UpdateWrapper<>();
-        updateWrapper.eq("order_no", orderNo)
-                    .set("order_status", "CANCELLED")
-                    .set("update_time", new Date());
+        updateWrapper.eq("orderNo", orderNo)
+                    .set("orderStatus", "CANCELLED")
+                    .set("updateTime", new Date());
 
         boolean updateResult = this.update(updateWrapper);
         if (updateResult) {
@@ -304,9 +305,9 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         }
 
         QueryWrapper<Order> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("user_id", userId)
-                   .eq("is_delete", 0)
-                   .orderByDesc("create_time");
+        queryWrapper.eq("userId", userId)
+                   .eq("isDelete", 0)
+                   .orderByDesc("createTime");
 
         List<Order> orders = this.list(queryWrapper);
         return orders.stream().map(this::convertToOrderVO).collect(Collectors.toList());
@@ -319,7 +320,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         }
 
         QueryWrapper<Order> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("order_no", orderNo).eq("is_delete", 0);
+        queryWrapper.eq("orderNo", orderNo).eq("isDelete", 0);
         Order order = this.getOne(queryWrapper);
 
         if (order == null) {

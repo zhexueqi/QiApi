@@ -121,7 +121,7 @@ CREATE TABLE user_credit (
     expire_time DATETIME COMMENT '额度过期时间',
     create_time DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-    is_delete TINYINT DEFAULT 0 COMMENT '是否删除 0-未删除 1-已删除',
+    isDelete TINYINT DEFAULT 0 COMMENT '是否删除 0-未删除 1-已删除',
     UNIQUE KEY uk_user_interface (user_id, interface_id),
     INDEX idx_user_id (user_id),
     INDEX idx_interface_id (interface_id)
@@ -139,7 +139,7 @@ CREATE TABLE user_points (
     frozen_points BIGINT DEFAULT 0 COMMENT '冻结积分',
     create_time DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-    is_delete TINYINT DEFAULT 0 COMMENT '是否删除',
+    isDelete TINYINT DEFAULT 0 COMMENT '是否删除',
     UNIQUE KEY uk_user_id (user_id)
 ) COMMENT '用户积分表';
 ```
@@ -179,7 +179,7 @@ CREATE TABLE credit_packages (
     sort_order INT DEFAULT 0 COMMENT '排序',
     create_time DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-    is_delete TINYINT DEFAULT 0 COMMENT '是否删除',
+    isDelete TINYINT DEFAULT 0 COMMENT '是否删除',
     INDEX idx_package_type (package_type),
     INDEX idx_status (status)
 ) COMMENT '额度套餐表';
@@ -228,7 +228,7 @@ CREATE TABLE orders (
     expire_time DATETIME COMMENT '订单过期时间',
     create_time DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-    is_delete TINYINT DEFAULT 0 COMMENT '是否删除',
+    isDelete TINYINT DEFAULT 0 COMMENT '是否删除',
     UNIQUE KEY uk_order_no (order_no),
     INDEX idx_user_id (user_id),
     INDEX idx_order_status (order_status),

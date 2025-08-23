@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * 额度套餐服务实现
+ * @author zhexueqi
  */
 @Service
 public class CreditPackageServiceImpl extends ServiceImpl<CreditPackageMapper, CreditPackage> implements CreditPackageService {

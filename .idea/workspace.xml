@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="75473c2a-bb64-438e-9402-0025d25ec5d7" name="Changes" comment="编写通用SDK，修复网关问题，统一接收前端请求并做统一处理">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qiapi-frontend-master/config/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-frontend-master/config/routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qiapi-frontend-master/src/pages/InterfaceInfo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-frontend-master/src/pages/InterfaceInfo/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qiapi-frontend-master/src/services/yuapi-backend/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-frontend-master/src/services/yuapi-backend/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qiapi-frontend-master/src/services/yuapi-backend/typings.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-frontend-master/src/services/yuapi-backend/typings.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +59,7 @@
   </component>
   <component name="MavenRunner">
     <option name="jreName" value="17" />
+    <option name="skipTests" value="true" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -65,13 +70,20 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "HTTP Request.generated-requests | #34.executor": "Run",
+    "Maven.qiapi-backend [clean].executor": "Run",
+    "Maven.qiapi-backend [compile].executor": "Run",
+    "Maven.qiapi-common [install].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "Spring Boot.MainApplication (1).executor": "Debug",
     "Spring Boot.MainApplication.executor": "Debug",
+    "Spring Boot.QiapiGatewayApplication.executor": "Debug",
+    "Spring Boot.QiapiInterfaceApplication.executor": "Debug",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/CodeALL/codeNav/QiAPI开放平台/apiQi",
@@ -108,19 +120,14 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.MainApplication">
+  <component name="RunManager" selected="Spring Boot.MainApplication (1)">
+    <configuration name="generated-requests | #34" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="34" requestIdentifier="#34" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="MainApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="qiapi-backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.qiapi.project.MainApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="qiapi-backend" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.qiapi.MainApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -140,6 +147,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.generated-requests | #34" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -167,7 +179,10 @@
       <workItem from="1744794318445" duration="361000" />
       <workItem from="1755010503930" duration="1232000" />
       <workItem from="1755925998978" duration="2468000" />
-      <workItem from="1755932872992" duration="899000" />
+      <workItem from="1755932872992" duration="10184000" />
+      <workItem from="1755962274470" duration="136000" />
+      <workItem from="1755962756412" duration="382000" />
+      <workItem from="1755963421284" duration="8601000" />
     </task>
     <task id="LOCAL-00001" summary="update gitignore">
       <option name="closed" value="true" />
@@ -247,5 +262,16 @@
     <MESSAGE value="add README.md" />
     <MESSAGE value="编写通用SDK，修复网关问题，统一接收前端请求并做统一处理" />
     <option name="LAST_COMMIT_MESSAGE" value="编写通用SDK，修复网关问题，统一接收前端请求并做统一处理" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/qiapi-backend/qiapi-gateway/src/main/java/com/qiapi/qiapigateway/CustomGlobalFilter.java</url>
+          <line>468</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -8,6 +8,7 @@ import java.util.Date;
 
 /**
  * 订单视图对象
+ * @author zhexueqi
  */
 @Data
 public class OrderVO implements Serializable {
@@ -16,6 +17,11 @@ public class OrderVO implements Serializable {
      * 订单ID
      */
     private Long id;
+
+    /**
+     * 用户ID
+     */
+    private Long userId;
 
     /**
      * 订单号

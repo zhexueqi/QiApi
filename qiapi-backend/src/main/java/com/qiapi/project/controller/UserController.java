@@ -329,6 +329,22 @@ public class UserController {
         ThrowUtils.throwIf(!result, ErrorCode.OPERATION_ERROR);
         return ResultUtils.success(true);
     }
+    /**
+     * 更新个人信息
+     *
+     * @param userUpdateMyRequest
+     * @param request
+     * @return
+     */
+    @PostMapping("/update/password")
+    public BaseResponse<Boolean> updatePassword(@RequestBody UserPasswordRequest userPasswordRequest,
+                                              HttpServletRequest request) {
+        if (userPasswordRequest == null) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        Boolean isSuccess = userService.updatePassword(userPasswordRequest.getOldPassword(), userPasswordRequest.getNewPassword(), request);
+        return ResultUtils.success(isSuccess);
+    }
     
     // region 密钥管理
     
