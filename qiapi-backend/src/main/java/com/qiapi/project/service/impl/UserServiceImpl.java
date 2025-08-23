@@ -10,6 +10,7 @@ import com.qiapi.project.constant.CommonConstant;
 import com.qiapi.project.exception.BusinessException;
 import com.qiapi.project.mapper.UserMapper;
 import com.qiapi.project.model.dto.user.UserQueryRequest;
+import com.qiapi.project.service.PointService;
 import com.qiapi.qiapicommon.model.entity.User;
 import com.qiapi.project.model.enums.UserRoleEnum;
 import com.qiapi.project.model.vo.LoginUserVO;
@@ -24,6 +25,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -44,6 +46,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
      * 盐值，混淆密码
      */
     public static final String SALT = "yupi";
+
+    @Resource
+    private PointService pointService;
 
     @Override
     public long userRegister(String userAccount, String userPassword, String checkPassword) {
@@ -84,6 +89,16 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             if (!saveResult) {
                 throw new BusinessException(ErrorCode.SYSTEM_ERROR, "注册失败，数据库错误");
             }
+            
+            // 初始化用户积分账户
+            try {
+                pointService.initUserPoints(user.getId());
+                log.info("用户{}积分账户初始化成功", user.getId());
+            } catch (Exception e) {
+                log.error("用户{}积分账户初始化失败", user.getId(), e);
+                // 积分初始化失败不影响注册流程
+            }
+            
             return user.getId();
         }
     }

@@ -7,6 +7,7 @@ import com.qiapi.qiapicommon.model.entity.UserInterfaceInfo;
 import com.qiapi.qiapicommon.service.InnerInterfaceInfoService;
 import com.qiapi.qiapicommon.service.InnerUserInterfaceInfoService;
 import com.qiapi.qiapicommon.service.InnerUserService;
+import com.qiapi.qiapicommon.service.InnerCreditService;
 import com.qiapi.project.utils.SignUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboReference;
@@ -47,6 +48,9 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
 
     @DubboReference(check = false)
     private InnerUserInterfaceInfoService innerUserInterfaceInfoService;
+
+    @DubboReference(check = false)
+    private InnerCreditService innerCreditService;
 
     private static final List<String> IP_WHITE_LIST = Collections.singletonList("127.0.0.1");
     
@@ -174,9 +178,19 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
         if (interfaceInfo == null) {
             return handleNoAuth(response);
         }
-        // 判断是否还有调用次数
+        // 检查额度和调用次数
         UserInterfaceInfo userInterfaceInfo = innerUserInterfaceInfoService.getUserInterfaceInfo(interfaceInfo.getId(), invokeUser.getId());
-        if (userInterfaceInfo == null || userInterfaceInfo.getLeftNum() < 1) {
+        
+        // 优先检查额度系统，如果额度充足就使用额度，否则检查旧的调用次数系统
+        boolean hasCreditQuota = false;
+        try {
+            hasCreditQuota = innerCreditService.checkCreditSufficient(invokeUser.getId(), interfaceInfo.getId(), 1L);
+        } catch (Exception e) {
+            log.error("检查额度失败", e);
+        }
+        
+        // 如果额度不足，再检查旧的调用次数系统
+        if (!hasCreditQuota && (userInterfaceInfo == null || userInterfaceInfo.getLeftNum() < 1)) {
             return handleInvokeError(response);
         }
 
@@ -184,7 +198,7 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
         //        Mono<Void> filter = chain.filter(exchange);
         //        return filter;
 
-        return handleResponse(exchange, chain, interfaceInfo.getId(), invokeUser.getId());
+        return handleResponse(exchange, chain, interfaceInfo.getId(), invokeUser.getId(), hasCreditQuota);
 
     }
 
@@ -195,7 +209,7 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
      * @param chain chain
      * @return Mono<Void>
      */
-    public Mono<Void> handleResponse(ServerWebExchange exchange, GatewayFilterChain chain, long interfaceInfoId, long userId) {
+    public Mono<Void> handleResponse(ServerWebExchange exchange, GatewayFilterChain chain, long interfaceInfoId, long userId, boolean useCreditSystem) {
         try {
             ServerHttpResponse originalResponse = exchange.getResponse();
             // 缓存数据的工厂
@@ -215,11 +229,21 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
                             // 拼接字符串
                             return super.writeWith(
                                     fluxBody.map(dataBuffer -> {
-                                        // 7. 调用成功，接口调用次数 + 1 invokeCount
+                                        // 7. 调用成功，扣减额度或调用次数
                                         try {
-                                            innerUserInterfaceInfoService.invokeCount(interfaceInfoId, userId);
+                                            if (useCreditSystem) {
+                                                // 优先扣减额度
+                                                boolean creditDeducted = innerCreditService.consumeCredit(userId, interfaceInfoId, 1L);
+                                                if (!creditDeducted) {
+                                                    log.warn("额度扣减失败，尝试扣减调用次数");
+                                                    innerUserInterfaceInfoService.invokeCount(interfaceInfoId, userId);
+                                                }
+                                            } else {
+                                                // 使用旧的调用次数系统
+                                                innerUserInterfaceInfoService.invokeCount(interfaceInfoId, userId);
+                                            }
                                         } catch (Exception e) {
-                                            log.error("invokeCount error", e);
+                                            log.error("扣减额度或调用次数失败", e);
                                         }
                                         byte[] content = new byte[dataBuffer.readableByteCount()];
                                         dataBuffer.read(content);

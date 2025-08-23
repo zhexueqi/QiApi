@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qiapi.project.mapper.UserPointsMapper">
+
+    <resultMap id="BaseResultMap" type="com.qiapi.qiapicommon.model.entity.UserPoints">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="userId" column="user_id" jdbcType="BIGINT"/>
+        <result property="totalPoints" column="total_points" jdbcType="BIGINT"/>
+        <result property="availablePoints" column="available_points" jdbcType="BIGINT"/>
+        <result property="frozenPoints" column="frozen_points" jdbcType="BIGINT"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="isDelete" column="is_delete" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,user_id,total_points,available_points,frozen_points,
+        create_time,update_time,is_delete
+    </sql>
+
+    <!-- 扣减用户积分 -->
+    <update id="deductPoints">
+        UPDATE user_points 
+        SET available_points = available_points - #{amount},
+            update_time = NOW()
+        WHERE user_id = #{userId} 
+          AND available_points >= #{amount}
+          AND is_delete = 0
+    </update>
+
+    <!-- 增加用户积分 -->
+    <update id="addPoints">
+        UPDATE user_points 
+        SET total_points = total_points + #{amount},
+            available_points = available_points + #{amount},
+            update_time = NOW()
+        WHERE user_id = #{userId}
+          AND is_delete = 0
+    </update>
+
+</mapper>

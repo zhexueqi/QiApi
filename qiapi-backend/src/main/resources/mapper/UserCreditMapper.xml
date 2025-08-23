@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qiapi.project.mapper.UserCreditMapper">
+
+    <resultMap id="BaseResultMap" type="com.qiapi.qiapicommon.model.entity.UserCredit">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="userId" column="user_id" jdbcType="BIGINT"/>
+        <result property="interfaceId" column="interface_id" jdbcType="BIGINT"/>
+        <result property="totalCredit" column="total_credit" jdbcType="BIGINT"/>
+        <result property="usedCredit" column="used_credit" jdbcType="BIGINT"/>
+        <result property="remainingCredit" column="remaining_credit" jdbcType="BIGINT"/>
+        <result property="freeApplied" column="free_applied" jdbcType="TINYINT"/>
+        <result property="status" column="status" jdbcType="TINYINT"/>
+        <result property="expireTime" column="expire_time" jdbcType="TIMESTAMP"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="isDelete" column="is_delete" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,user_id,interface_id,total_credit,used_credit,remaining_credit,
+        free_applied,status,expire_time,create_time,update_time,is_delete
+    </sql>
+
+    <!-- 扣减用户接口额度 -->
+    <update id="deductCredit">
+        UPDATE user_credit 
+        SET used_credit = used_credit + #{amount},
+            remaining_credit = remaining_credit - #{amount},
+            update_time = NOW()
+        WHERE user_id = #{userId} 
+          AND interface_id = #{interfaceId} 
+          AND remaining_credit >= #{amount}
+          AND is_delete = 0
+          AND status = 1
+    </update>
+
+    <!-- 增加用户接口额度 -->
+    <update id="addCredit">
+        UPDATE user_credit 
+        SET total_credit = total_credit + #{amount},
+            remaining_credit = remaining_credit + #{amount},
+            update_time = NOW()
+        WHERE user_id = #{userId} 
+          AND interface_id = #{interfaceId}
+          AND is_delete = 0
+    </update>
+
+</mapper>
