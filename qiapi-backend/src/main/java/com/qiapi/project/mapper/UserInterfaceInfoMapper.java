@@ -8,6 +8,7 @@ import java.util.List;
 /**
  * 用户接口信息 Mapper
  *
+ * @author zhexueqi
  */
 public interface UserInterfaceInfoMapper extends BaseMapper<UserInterfaceInfo> {
 
