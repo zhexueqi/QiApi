@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="qiapi-common" />
+        <module name="qiapi-client-sdk" />
+        <module name="qiapi-backend" />
+        <module name="qiapi-gateway" />
+        <module name="qiapi-interface" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="17">
+      <module name="maven-archiver" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="qiapi-backend" options="-parameters" />
+      <module name="qiapi-client-sdk" options="-parameters" />
+      <module name="qiapi-common" options="-parameters" />
+      <module name="qiapi-gateway" options="-parameters" />
+      <module name="qiapi-interface" options="-parameters" />
+    </option>
+  </component>
+</project>
