@@ -45,5 +45,15 @@ public class UserQueryRequest extends PageRequest implements Serializable {
      */
     private String userRole;
 
+    /**
+     * 排序字段
+     */
+    private String sortField;
+
+    /**
+     * 排序顺序（默认升序）
+     */
+    private String sortOrder;
+
     private static final long serialVersionUID = 1L;
 }

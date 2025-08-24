@@ -32,41 +32,5 @@ public class InnerCreditServiceImpl implements InnerCreditService {
         return creditService.consumeCredit(userId, interfaceId, amount);
     }
 
-    @Override
-    public boolean checkCreditSufficientBySession(String sessionId, Long interfaceId, Long amount) {
-        try {
-            // 通过SessionID获取用户信息
-            User user = innerUserService.getUserBySessionId(sessionId);
-            if (user == null || user.getId() == null) {
-                log.warn("无法通过SessionID获取用户信息 - SessionID: {}", sessionId);
-                return false;
-            }
 
-            // 调用原有的检查方法
-            return creditService.checkCreditSufficient(user.getId(), interfaceId, amount);
-        } catch (Exception e) {
-            log.error("基于SessionID检查额度失败 - SessionID: {}, InterfaceID: {}, Amount: {}", 
-                     sessionId, interfaceId, amount, e);
-            return false;
-        }
-    }
-
-    @Override
-    public boolean consumeCreditBySession(String sessionId, Long interfaceId, Long amount) {
-        try {
-            // 通过SessionID获取用户信息
-            User user = innerUserService.getUserBySessionId(sessionId);
-            if (user == null || user.getId() == null) {
-                log.warn("无法通过SessionID获取用户信息 - SessionID: {}", sessionId);
-                return false;
-            }
-
-            // 调用原有的消费方法
-            return creditService.consumeCredit(user.getId(), interfaceId, amount);
-        } catch (Exception e) {
-            log.error("基于SessionID消费额度失败 - SessionID: {}, InterfaceID: {}, Amount: {}", 
-                     sessionId, interfaceId, amount, e);
-            return false;
-        }
-    }
 }

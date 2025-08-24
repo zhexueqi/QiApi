@@ -10,7 +10,16 @@ import com.qiapi.project.config.WxOpenConfig;
 import com.qiapi.project.constant.UserConstant;
 import com.qiapi.project.exception.BusinessException;
 import com.qiapi.project.exception.ThrowUtils;
-import com.qiapi.project.model.dto.user.*;
+import com.qiapi.project.model.dto.user.EmailLoginRequest;
+import com.qiapi.project.model.dto.user.EmailRegisterRequest;
+import com.qiapi.project.model.dto.user.UserLoginRequest;
+import com.qiapi.project.model.dto.user.UserRegisterRequest;
+import com.qiapi.project.model.dto.user.UserAddRequest;
+import com.qiapi.project.model.dto.user.UserUpdateRequest;
+import com.qiapi.project.model.dto.user.UserQueryRequest;
+import com.qiapi.project.model.dto.user.UserUpdateMyRequest;
+import com.qiapi.project.model.dto.user.UserPasswordRequest;
+import com.qiapi.project.service.UserService;
 import com.qiapi.qiapicommon.model.entity.User;
 import com.qiapi.project.model.vo.LoginUserVO;
 import com.qiapi.project.model.vo.UserVO;
@@ -33,7 +42,6 @@ import java.security.SecureRandom;
 
 import static com.qiapi.project.service.impl.UserServiceImpl.SALT;
 
-
 /**
  * 用户接口
  *
@@ -46,7 +54,7 @@ import static com.qiapi.project.service.impl.UserServiceImpl.SALT;
 public class UserController {
 
     @Resource
-    private com.qiapi.service.UserService userService;
+    private UserService userService;
 
     @Resource
     private WxOpenConfig wxOpenConfig;
@@ -65,32 +73,13 @@ public class UserController {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
         String userAccount = userRegisterRequest.getUserAccount();
+        String userEmail = userRegisterRequest.getUserEmail();
         String userPassword = userRegisterRequest.getUserPassword();
         String checkPassword = userRegisterRequest.getCheckPassword();
-        if (StringUtils.isAnyBlank(userAccount, userPassword, checkPassword)) {
-            return null;
-        }
-        
-        // 注册用户并自动生成API密钥
-        long result = userService.userRegister(userAccount, userPassword, checkPassword);
-        
-        // 注册成功后，为用户生成API密钥
-        if (result > 0) {
-            User user = userService.getById(result);
-            if (user != null) {
-                String accessKey = generateAccessKey();
-                String secretKey = generateSecretKey();
-                
-                User updateUser = new User();
-                updateUser.setId(result);
-                updateUser.setAccessKey(accessKey);
-                updateUser.setSecretKey(secretKey);
-                
-                userService.updateById(updateUser);
-                log.info("新用户 {} 注册成功，已自动生成API密钥", userAccount);
-            }
-        }
-        
+
+        // 使用新的注册方法，支持邮箱和用户名注册
+        long result = userService.userRegisterWithEmail(userAccount, userEmail, userPassword, checkPassword);
+
         return ResultUtils.success(result);
     }
 
@@ -102,16 +91,17 @@ public class UserController {
      * @return
      */
     @PostMapping("/login")
-    public BaseResponse<LoginUserVO> userLogin(@RequestBody UserLoginRequest userLoginRequest, HttpServletRequest request) {
+    public BaseResponse<LoginUserVO> userLogin(@RequestBody UserLoginRequest userLoginRequest,
+            HttpServletRequest request) {
         if (userLoginRequest == null) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
         String userAccount = userLoginRequest.getUserAccount();
+        String userEmail = userLoginRequest.getUserEmail();
         String userPassword = userLoginRequest.getUserPassword();
-        if (StringUtils.isAnyBlank(userAccount, userPassword)) {
-            throw new BusinessException(ErrorCode.PARAMS_ERROR);
-        }
-        LoginUserVO loginUserVO = userService.userLogin(userAccount, userPassword, request);
+
+        // 使用新的登录方法，支持邮箱和用户名登录
+        LoginUserVO loginUserVO = userService.userLoginWithEmail(userAccount, userEmail, userPassword, request);
         return ResultUtils.success(loginUserVO);
     }
 
@@ -120,7 +110,7 @@ public class UserController {
      */
     @GetMapping("/login/wx_open")
     public BaseResponse<LoginUserVO> userLoginByWxOpen(HttpServletRequest request, HttpServletResponse response,
-                                                       @RequestParam("code") String code) {
+            @RequestParam("code") String code) {
         WxOAuth2AccessToken accessToken;
         try {
             WxMpService wxService = wxOpenConfig.getWxMpService();
@@ -136,6 +126,40 @@ public class UserController {
             log.error("userLoginByWxOpen error", e);
             throw new BusinessException(ErrorCode.SYSTEM_ERROR, "登录失败，系统错误");
         }
+    }
+
+    /**
+     * 邮箱验证码注册
+     *
+     * @param emailRegisterRequest
+     * @return
+     */
+    @PostMapping("/register/email")
+    public BaseResponse<Long> userRegisterByEmail(@RequestBody EmailRegisterRequest emailRegisterRequest) {
+        if (emailRegisterRequest == null) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+
+        long result = userService.userRegisterByEmailCode(emailRegisterRequest);
+        return ResultUtils.success(result);
+    }
+
+    /**
+     * 邮箱验证码登录
+     *
+     * @param emailLoginRequest
+     * @param request
+     * @return
+     */
+    @PostMapping("/login/email")
+    public BaseResponse<LoginUserVO> userLoginByEmail(@RequestBody EmailLoginRequest emailLoginRequest,
+            HttpServletRequest request) {
+        if (emailLoginRequest == null) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+
+        LoginUserVO loginUserVO = userService.userLoginByEmailCode(emailLoginRequest, request);
+        return ResultUtils.success(loginUserVO);
     }
 
     /**
@@ -220,7 +244,7 @@ public class UserController {
     @PostMapping("/update")
     @AuthCheck(mustRole = UserConstant.ADMIN_ROLE)
     public BaseResponse<Boolean> updateUser(@RequestBody UserUpdateRequest userUpdateRequest,
-                                            HttpServletRequest request) {
+            HttpServletRequest request) {
         if (userUpdateRequest == null || userUpdateRequest.getId() == null) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
@@ -273,7 +297,7 @@ public class UserController {
     @PostMapping("/list/page")
     @AuthCheck(mustRole = UserConstant.ADMIN_ROLE)
     public BaseResponse<Page<User>> listUserByPage(@RequestBody UserQueryRequest userQueryRequest,
-                                                   HttpServletRequest request) {
+            HttpServletRequest request) {
         long current = userQueryRequest.getCurrent();
         long size = userQueryRequest.getPageSize();
         Page<User> userPage = userService.page(new Page<>(current, size),
@@ -290,7 +314,7 @@ public class UserController {
      */
     @PostMapping("/list/page/vo")
     public BaseResponse<Page<UserVO>> listUserVOByPage(@RequestBody UserQueryRequest userQueryRequest,
-                                                       HttpServletRequest request) {
+            HttpServletRequest request) {
         if (userQueryRequest == null) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
@@ -317,7 +341,7 @@ public class UserController {
      */
     @PostMapping("/update/my")
     public BaseResponse<Boolean> updateMyUser(@RequestBody UserUpdateMyRequest userUpdateMyRequest,
-                                              HttpServletRequest request) {
+            HttpServletRequest request) {
         if (userUpdateMyRequest == null) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
@@ -329,6 +353,7 @@ public class UserController {
         ThrowUtils.throwIf(!result, ErrorCode.OPERATION_ERROR);
         return ResultUtils.success(true);
     }
+
     /**
      * 更新个人信息
      *
@@ -338,16 +363,17 @@ public class UserController {
      */
     @PostMapping("/update/password")
     public BaseResponse<Boolean> updatePassword(@RequestBody UserPasswordRequest userPasswordRequest,
-                                              HttpServletRequest request) {
+            HttpServletRequest request) {
         if (userPasswordRequest == null) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
-        Boolean isSuccess = userService.updatePassword(userPasswordRequest.getOldPassword(), userPasswordRequest.getNewPassword(), request);
+        Boolean isSuccess = userService.updatePassword(userPasswordRequest.getOldPassword(),
+                userPasswordRequest.getNewPassword(), request);
         return ResultUtils.success(isSuccess);
     }
-    
+
     // region 密钥管理
-    
+
     /**
      * 生成用户API密钥
      * 只有在用户首次生成或重新生成时调用
@@ -358,29 +384,29 @@ public class UserController {
     @PostMapping("/generate/keys")
     public BaseResponse<UserKeyVO> generateApiKeys(HttpServletRequest request) {
         User loginUser = userService.getLoginUser(request);
-        
+
         // 生成新的AccessKey和SecretKey
         String accessKey = generateAccessKey();
         String secretKey = generateSecretKey();
-        
+
         // 更新用户信息
         User updateUser = new User();
         updateUser.setId(loginUser.getId());
         updateUser.setAccessKey(accessKey);
         updateUser.setSecretKey(secretKey);
-        
+
         boolean result = userService.updateById(updateUser);
         ThrowUtils.throwIf(!result, ErrorCode.OPERATION_ERROR);
-        
+
         // 返回新生成的密钥
         UserKeyVO userKeyVO = new UserKeyVO();
         userKeyVO.setAccessKey(accessKey);
         userKeyVO.setSecretKey(secretKey);
-        
+
         log.info("用户 {} 生成了新的API密钥", loginUser.getId());
         return ResultUtils.success(userKeyVO);
     }
-    
+
     /**
      * 重新生成用户API密钥
      * 会使旧密钥失效
@@ -391,29 +417,29 @@ public class UserController {
     @PostMapping("/regenerate/keys")
     public BaseResponse<UserKeyVO> regenerateApiKeys(HttpServletRequest request) {
         User loginUser = userService.getLoginUser(request);
-        
+
         // 生成新的AccessKey和SecretKey
         String accessKey = generateAccessKey();
         String secretKey = generateSecretKey();
-        
+
         // 更新用户信息
         User updateUser = new User();
         updateUser.setId(loginUser.getId());
         updateUser.setAccessKey(accessKey);
         updateUser.setSecretKey(secretKey);
-        
+
         boolean result = userService.updateById(updateUser);
         ThrowUtils.throwIf(!result, ErrorCode.OPERATION_ERROR);
-        
+
         // 返回新生成的密钥
         UserKeyVO userKeyVO = new UserKeyVO();
         userKeyVO.setAccessKey(accessKey);
         userKeyVO.setSecretKey(secretKey);
-        
+
         log.info("用户 {} 重新生成了API密钥", loginUser.getId());
         return ResultUtils.success(userKeyVO);
     }
-    
+
     /**
      * 获取用户当前的API密钥信息
      * 不返回完整的SecretKey，只返回部分字符用于显示
@@ -424,27 +450,27 @@ public class UserController {
     @GetMapping("/get/keys")
     public BaseResponse<UserKeyVO> getUserKeys(HttpServletRequest request) {
         User loginUser = userService.getLoginUser(request);
-        
+
         UserKeyVO userKeyVO = new UserKeyVO();
         userKeyVO.setAccessKey(loginUser.getAccessKey());
-        
+
         // 只返回SecretKey的前4位和后4位，中间用*号替代，用于安全显示
         String secretKey = loginUser.getSecretKey();
         if (secretKey != null && secretKey.length() > 8) {
-            String maskedSecretKey = secretKey.substring(0, 4) + 
-                    "*".repeat(secretKey.length() - 8) + 
+            String maskedSecretKey = secretKey.substring(0, 4) +
+                    "*".repeat(secretKey.length() - 8) +
                     secretKey.substring(secretKey.length() - 4);
             userKeyVO.setSecretKey(maskedSecretKey);
         } else {
             userKeyVO.setSecretKey("未生成");
         }
-        
+
         // 设置是否已生成密钥的标志
         userKeyVO.setHasKeys(loginUser.getAccessKey() != null && loginUser.getSecretKey() != null);
-        
+
         return ResultUtils.success(userKeyVO);
     }
-    
+
     /**
      * 生成AccessKey
      * 格式: qiapi_ + 时间戳 + 随机字符串
@@ -454,7 +480,7 @@ public class UserController {
         String randomStr = UUID.randomUUID().toString().replace("-", "").substring(0, 8);
         return "qiapi_" + timestamp + "_" + randomStr;
     }
-    
+
     /**
      * 生成SecretKey
      * 使用安全随机数生成64位字符串
@@ -463,13 +489,13 @@ public class UserController {
         SecureRandom secureRandom = new SecureRandom();
         StringBuilder secretKey = new StringBuilder();
         String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        
+
         for (int i = 0; i < 64; i++) {
             secretKey.append(chars.charAt(secureRandom.nextInt(chars.length())));
         }
-        
+
         return secretKey.toString();
     }
-    
+
     // endregion
 }

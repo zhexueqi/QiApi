@@ -2,6 +2,8 @@ package com.qiapi.qiapicommon.model.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -33,6 +35,8 @@ public class UserCredit implements Serializable {
     /**
      * 接口名称
      */
+    @Getter
+    @Setter
     private String interfaceName;
 
     /**
@@ -84,12 +88,4 @@ public class UserCredit implements Serializable {
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 
-    // 手动添加interfaceName的getter和setter方法
-    public String getInterfaceName() {
-        return interfaceName;
-    }
-
-    public void setInterfaceName(String interfaceName) {
-        this.interfaceName = interfaceName;
-    }
 }

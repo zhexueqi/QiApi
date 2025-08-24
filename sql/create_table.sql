@@ -7,11 +7,13 @@ create database if not exists qiapi;
 use qiapi;
 
 -- 用户表
+-- auto-generated definition
 create table user
 (
     id           bigint auto_increment comment 'id'
         primary key,
     userAccount  varchar(256)                           not null comment '账号',
+    userEmail    varchar(256)                           null comment '用户邮箱',
     userPassword varchar(512)                           not null comment '密码',
     userName     varchar(256)                           null comment '用户昵称',
     gender       tinyint                                null comment '性别 0-女 1-男',
@@ -22,9 +24,11 @@ create table user
     updateTime   datetime     default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间',
     isDelete     tinyint      default 0                 not null comment '是否删除',
     accessKey    varchar(255)                           null,
-    secureKey    varchar(255)                           null
+    secretKey    varchar(255)                           null
 )
     comment '用户' collate = utf8mb4_unicode_ci;
+
+
 
 -- 接口信息表
 create table if not exists qiapi.`interface_info`

@@ -19,7 +19,7 @@ spring:
   # todo 需替换配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/qiapi?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://localhost:3306/qiapi?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true&allowMultiQueries=true
     username: root
     password: 123456
   # Redis 配置
@@ -41,6 +41,20 @@ spring:
     multipart:
       # 大小限制
       max-file-size: 10MB
+  # 邮件配置
+  mail:
+    host: smtp.qq.com
+    port: 587
+    username: 354715878@qq.com
+    password: githotrchjvybhdd
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+        debug: false
+
 server:
   address: 0.0.0.0
   port: 8101
@@ -98,13 +112,44 @@ knife4j:
       default:
         api-rule: package
         api-rule-resources:
-          - com.qiapi.controller
+          - com.qiapi.project.controller
 dubbo:
   application:
-    name: dubbo-springboot-demo-provider
+    name: qiapi-backend
+    # 关闭Dubbo的QoS端口，避免端口冲突
+    qos-enable: false
   protocol:
     name: dubbo
     port: -1
   registry:
     id: nacos-registry
-    address: nacos://localhost:8848
+    address: nacos://127.0.0.1:8848
+    timeout: 60000
+    # 优化连接参数
+    parameters:
+      registry.check: false
+      subscribe.only: false
+      # 设置重试次数和间隔
+      retry.times: 3
+      retry.period: 5000
+      # 设置心跳间隔
+      heartbeat: 60000
+  # 消费者配置
+  consumer:
+    # 关闭启动时检查
+    check: false
+    timeout: 60000
+    retries: 2
+  # 提供者配置
+  provider:
+    timeout: 60000
+    retries: 2
+
+# QiAPI 客户端配置
+qiapi:
+  client:
+    access-key: "zhexueqi"
+    secret-key: "zhexueqiSK"
+    platform-url: "http://localhost:8101/api"
+    default-timeout: 30000
+    enable-api-discovery: true

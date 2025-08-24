@@ -13,7 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class UserServiceTest {
 
     @Resource
-    private com.qiapi.service.UserService userService;
+    private UserService userService;
 
     @Test
     void userRegister() {

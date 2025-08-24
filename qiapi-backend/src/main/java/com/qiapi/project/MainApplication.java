@@ -12,7 +12,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  *
  * @author zhexueqi
  */
-@SpringBootApplication()
+@SpringBootApplication(scanBasePackages = { "com.qiapi.project", "com.qiapi" })
 @MapperScan("com.qiapi.project.mapper")
 @EnableScheduling
 @EnableDubbo

@@ -179,3 +179,48 @@ export async function getKeysUsingGET(options?: { [key: string]: any }) {
     ...(options || {}),
   });
 }
+
+/** sendEmailCode POST /api/email/send/code */
+export async function sendEmailCodeUsingPOST(
+  body: API.SendEmailCodeRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.BaseResponseboolean>('/api/email/send/code', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** userRegisterByEmail POST /api/user/register/email */
+export async function userRegisterByEmailUsingPOST(
+  body: API.EmailRegisterRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.BaseResponselong>('/api/user/register/email', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** userLoginByEmail POST /api/user/login/email */
+export async function userLoginByEmailUsingPOST(
+  body: API.EmailLoginRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.BaseResponseUser>('/api/user/login/email', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}

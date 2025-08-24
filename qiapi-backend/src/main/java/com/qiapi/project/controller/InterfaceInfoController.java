@@ -15,6 +15,7 @@ import com.qiapi.project.model.dto.interfaceinfo.InterfaceInfoUpdateRequest;
 import com.qiapi.project.model.vo.InterfaceInfoVO;
 import com.qiapi.project.service.CreditService;
 import com.qiapi.project.service.InterfaceInfoService;
+import com.qiapi.project.service.UserService;
 import com.qiapi.qiapicommon.model.entity.InterfaceInfo;
 import com.qiapi.qiapicommon.model.entity.User;
 import lombok.extern.slf4j.Slf4j;
@@ -41,7 +42,7 @@ public class InterfaceInfoController {
     private InterfaceInfoService interfaceInfoService;
 
     @Resource
-    private com.qiapi.service.UserService userService;
+    private UserService userService;
 
     @Resource
     private QiApiClient qiApiClient;

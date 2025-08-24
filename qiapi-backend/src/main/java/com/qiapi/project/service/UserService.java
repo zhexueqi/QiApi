@@ -1,7 +1,9 @@
-package com.qiapi.service;
+package com.qiapi.project.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.qiapi.project.model.dto.user.EmailLoginRequest;
+import com.qiapi.project.model.dto.user.EmailRegisterRequest;
 import com.qiapi.project.model.dto.user.UserQueryRequest;
 import com.qiapi.qiapicommon.model.entity.User;
 import com.qiapi.project.model.vo.LoginUserVO;
@@ -30,6 +32,17 @@ public interface UserService extends IService<User> {
     long userRegister(String userAccount, String userPassword, String checkPassword);
 
     /**
+     * 用户注册（支持邮箱和用户名）
+     *
+     * @param userAccount   用户账户
+     * @param userEmail     用户邮箱
+     * @param userPassword  用户密码
+     * @param checkPassword 校验密码
+     * @return 新用户 id
+     */
+    long userRegisterWithEmail(String userAccount, String userEmail, String userPassword, String checkPassword);
+
+    /**
      * 用户登录
      *
      * @param userAccount  用户账户
@@ -40,6 +53,18 @@ public interface UserService extends IService<User> {
     LoginUserVO userLogin(String userAccount, String userPassword, HttpServletRequest request);
 
     /**
+     * 用户登录（支持邮箱和用户名）
+     *
+     * @param userAccount  用户账户
+     * @param userEmail    用户邮箱
+     * @param userPassword 用户密码
+     * @param request
+     * @return 脱敏后的用户信息
+     */
+    LoginUserVO userLoginWithEmail(String userAccount, String userEmail, String userPassword,
+            HttpServletRequest request);
+
+    /**
      * 用户登录（微信开放平台）
      *
      * @param wxOAuth2UserInfo 从微信获取的用户信息
@@ -47,6 +72,23 @@ public interface UserService extends IService<User> {
      * @return 脱敏后的用户信息
      */
     LoginUserVO userLoginByMpOpen(WxOAuth2UserInfo wxOAuth2UserInfo, HttpServletRequest request);
+
+    /**
+     * 邮箱验证码注册
+     *
+     * @param emailRegisterRequest 邮箱注册请求
+     * @return 新用户 id
+     */
+    long userRegisterByEmailCode(EmailRegisterRequest emailRegisterRequest);
+
+    /**
+     * 邮箱验证码登录
+     *
+     * @param emailLoginRequest 邮箱登录请求
+     * @param request
+     * @return 脱敏后的用户信息
+     */
+    LoginUserVO userLoginByEmailCode(EmailLoginRequest emailLoginRequest, HttpServletRequest request);
 
     /**
      * 获取当前登录用户

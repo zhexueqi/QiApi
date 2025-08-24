@@ -1,25 +1,29 @@
 import Footer from '@/components/Footer';
 import { getFakeCaptcha } from '@/services/ant-design-pro/login';
 import {
-  AlipayCircleOutlined,
+  // AlipayCircleOutlined,
   LockOutlined,
-  MobileOutlined,
-  TaobaoCircleOutlined,
+  // MobileOutlined,
+  // TaobaoCircleOutlined,
   UserOutlined,
-  WeiboCircleOutlined,
+  MailOutlined,
+  // WeiboCircleOutlined,
 } from '@ant-design/icons';
 import {
   LoginForm,
-  ProFormCaptcha,
+  // ProFormCaptcha,
   ProFormCheckbox,
   ProFormText,
+  ProFormCaptcha,
 } from '@ant-design/pro-components';
 import { history, useModel } from '@umijs/max';
-import { Alert, message, Tabs } from 'antd';
-import React, { useState } from 'react';
+import { Alert, message, Tabs, Space, Typography } from 'antd';
+import React, { useState, useRef } from 'react';
 import { flushSync } from 'react-dom';
 import styles from './index.less';
-import { userLoginUsingPOST } from '@/services/yuapi-backend/userController';
+import { userLoginUsingPOST, sendEmailCodeUsingPOST, userLoginByEmailUsingPOST } from '@/services/yuapi-backend/userController';
+
+const { Text, Link } = Typography;
 
 const LoginMessage: React.FC<{
   content: string;
@@ -39,12 +43,23 @@ const Login: React.FC = () => {
   const [userLoginState, setUserLoginState] = useState<API.LoginResult>({});
   const [type, setType] = useState<string>('account');
   const { initialState, setInitialState } = useModel('@@initialState');
-  const handleSubmit = async (values: API.UserLoginRequest) => {
+  const formRef = useRef<any>();
+
+  const handleSubmit = async (values: API.UserLoginRequest | API.EmailLoginRequest) => {
     try {
-      // 登录
-      const res = await userLoginUsingPOST({
-        ...values,
-      });
+      let res;
+      if (type === 'account') {
+        // 用户名密码登录
+        res = await userLoginUsingPOST({
+          ...values,
+        } as API.UserLoginRequest);
+      } else {
+        // 邮箱验证码登录
+        res = await userLoginByEmailUsingPOST({
+          ...values,
+        } as API.EmailLoginRequest);
+      }
+
       if (res.data) {
         // 先更新全局状态
         flushSync(() => {
@@ -57,6 +72,8 @@ const Login: React.FC = () => {
         const urlParams = new URL(window.location.href).searchParams;
         history.push(urlParams.get('redirect') || '/');
         return;
+      } else {
+        message.error(res.message || '登录失败，请重试！');
       }
     } catch (error) {
       const defaultLoginFailureMessage = '登录失败，请重试！';
@@ -64,25 +81,27 @@ const Login: React.FC = () => {
       message.error(defaultLoginFailureMessage);
     }
   };
+
   const { status, type: loginType } = userLoginState;
   return (
     <div className={styles.container}>
       <div className={styles.content}>
         <LoginForm
+          formRef={formRef}
           logo={<img alt="logo" src="/logo.svg" />}
           title="QiApi开发平台"
           subTitle={'API 开放平台'}
           initialValues={{
             autoLogin: true,
           }}
-          actions={[
-            '其他登录方式 :',
-            <AlipayCircleOutlined key="AlipayCircleOutlined" className={styles.icon} />,
-            <TaobaoCircleOutlined key="TaobaoCircleOutlined" className={styles.icon} />,
-            <WeiboCircleOutlined key="WeiboCircleOutlined" className={styles.icon} />,
-          ]}
+          // actions={[
+          //   '其他登录方式 :',
+          //   <AlipayCircleOutlined key="AlipayCircleOutlined" className={styles.icon} />,
+          //   <TaobaoCircleOutlined key="TaobaoCircleOutlined" className={styles.icon} />,
+          //   <WeiboCircleOutlined key="WeiboCircleOutlined" className={styles.icon} />,
+          // ]}
           onFinish={async (values) => {
-            await handleSubmit(values as API.UserLoginRequest);
+            await handleSubmit(values as API.UserLoginRequest | API.EmailLoginRequest);
           }}
         >
           <Tabs
@@ -95,8 +114,8 @@ const Login: React.FC = () => {
                 label: '账户密码登录',
               },
               {
-                key: 'mobile',
-                label: '手机号登录',
+                key: 'email',
+                label: '邮箱验证码登录',
               },
             ]}
           />
@@ -137,24 +156,23 @@ const Login: React.FC = () => {
             </>
           )}
 
-          {status === 'error' && loginType === 'mobile' && <LoginMessage content="验证码错误" />}
-          {type === 'mobile' && (
+          {type === 'email' && (
             <>
               <ProFormText
                 fieldProps={{
                   size: 'large',
-                  prefix: <MobileOutlined className={styles.prefixIcon} />,
+                  prefix: <MailOutlined className={styles.prefixIcon} />,
                 }}
-                name="mobile"
-                placeholder={'请输入手机号！'}
+                name="email"
+                placeholder={'请输入邮箱！'}
                 rules={[
                   {
                     required: true,
-                    message: '手机号是必填项！',
+                    message: '邮箱是必填项！',
                   },
                   {
-                    pattern: /^1\d{10}$/,
-                    message: '不合法的手机号！',
+                    type: 'email',
+                    message: '请输入正确的邮箱格式！',
                   },
                 ]}
               />
@@ -173,21 +191,34 @@ const Login: React.FC = () => {
                   }
                   return '获取验证码';
                 }}
-                name="captcha"
+                name="code"
                 rules={[
                   {
                     required: true,
                     message: '验证码是必填项！',
                   },
                 ]}
-                onGetCaptcha={async (phone) => {
-                  const result = await getFakeCaptcha({
-                    phone,
-                  });
-                  if (result === false) {
-                    return;
+                onGetCaptcha={async (email) => {
+                  // 如果onGetCaptcha没有正确获取到email值，则手动从表单获取
+                  let emailValue = email;
+                  if (!emailValue) {
+                    // 通过表单实例获取邮箱值
+                    const formValues = formRef.current?.getFieldValue('email');
+                    emailValue = formValues;
                   }
-                  message.success('获取验证码成功！验证码为：1234');
+
+                  if (!emailValue) {
+                    message.error('请先输入邮箱地址');
+                    throw new Error('请先输入邮箱地址');
+                  }
+
+                  const result = await sendEmailCodeUsingPOST({ email: emailValue });
+                  if (result.code === 0) {
+                    message.success('验证码发送成功！');
+                  } else {
+                    message.error(result.message || '验证码发送失败');
+                    throw new Error('验证码发送失败');
+                  }
                 }}
               />
             </>
@@ -200,13 +231,16 @@ const Login: React.FC = () => {
             <ProFormCheckbox noStyle name="autoLogin">
               自动登录
             </ProFormCheckbox>
-            <a
-              style={{
-                float: 'right',
-              }}
-            >
-              忘记密码 ?
-            </a>
+            <Space style={{ float: 'right' }}>
+              <Link
+                onClick={() => {
+                  history.push('/user/register');
+                }}
+              >
+                注册账号
+              </Link>
+              <a>忘记密码 ?</a>
+            </Space>
           </div>
         </LoginForm>
       </div>

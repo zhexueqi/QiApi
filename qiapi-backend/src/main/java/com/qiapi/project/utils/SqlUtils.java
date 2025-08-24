@@ -1,4 +1,4 @@
-package com.qiapi.utils;
+package com.qiapi.project.utils;
 
 import org.apache.commons.lang3.StringUtils;
 

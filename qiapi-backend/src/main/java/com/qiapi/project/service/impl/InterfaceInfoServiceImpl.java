@@ -15,7 +15,7 @@ import com.qiapi.project.model.vo.InterfaceInfoVO;
 import com.qiapi.project.service.InterfaceInfoService;
 import com.qiapi.qiapicommon.model.entity.InterfaceInfo;
 import com.qiapi.project.mapper.InterfaceInfoMapper;
-import com.qiapi.utils.SqlUtils;
+import com.qiapi.project.utils.SqlUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
@@ -27,17 +27,16 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
-* @author zhexueqi
-* @description 针对表【interface_info(接口信息表)】的数据库操作Service实现
-* @createDate 2024-07-27 11:27:05
-*/
+ * @author zhexueqi
+ * @description 针对表【interface_info(接口信息表)】的数据库操作Service实现
+ * @createDate 2024-07-27 11:27:05
+ */
 @Service
 public class InterfaceInfoServiceImpl extends ServiceImpl<InterfaceInfoMapper, InterfaceInfo>
-    implements InterfaceInfoService {
+        implements InterfaceInfoService {
 
     @Resource
     private QiApiClient qiApiClient;
-
 
     @Override
     public void validInterfaceInfo(InterfaceInfo interfaceinfo, boolean add) {
@@ -52,7 +51,8 @@ public class InterfaceInfoServiceImpl extends ServiceImpl<InterfaceInfoMapper, I
         String method = interfaceinfo.getMethod();
         // 创建时，参数不能为空
         if (add) {
-            ThrowUtils.throwIf(StringUtils.isAnyBlank(name,url , requestHeader,responseHeader,method), ErrorCode.PARAMS_ERROR);
+            ThrowUtils.throwIf(StringUtils.isAnyBlank(name, url, requestHeader, responseHeader, method),
+                    ErrorCode.PARAMS_ERROR);
         }
         if (StringUtils.isNotBlank(name) && name.length() > 20) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR, "名称过长");
@@ -65,6 +65,7 @@ public class InterfaceInfoServiceImpl extends ServiceImpl<InterfaceInfoMapper, I
 
     /**
      * 获取接口信息VO
+     * 
      * @param interfaceinfo
      * @param request
      * @return
@@ -79,7 +80,6 @@ public class InterfaceInfoServiceImpl extends ServiceImpl<InterfaceInfoMapper, I
         return interfaceInfoVO;
     }
 
-
     /**
      * 获取查询包装类
      *
@@ -88,7 +88,6 @@ public class InterfaceInfoServiceImpl extends ServiceImpl<InterfaceInfoMapper, I
      */
     @Override
     public QueryWrapper<InterfaceInfo> getQueryWrapper(InterfaceInfoQueryRequest interfaceInfoQueryRequest) {
-
 
         QueryWrapper<InterfaceInfo> queryWrapper = new QueryWrapper<>();
         if (interfaceInfoQueryRequest == null) {
@@ -121,17 +120,19 @@ public class InterfaceInfoServiceImpl extends ServiceImpl<InterfaceInfoMapper, I
         return queryWrapper;
     }
 
-
     /**
      * 分页获取列表（封装类）
+     * 
      * @param interfaceInfoPage
      * @param request
      * @return
      */
     @Override
-    public Page<InterfaceInfoVO> getInterfaceInfoVOPage(Page<InterfaceInfo> interfaceInfoPage, HttpServletRequest request) {
+    public Page<InterfaceInfoVO> getInterfaceInfoVOPage(Page<InterfaceInfo> interfaceInfoPage,
+            HttpServletRequest request) {
         List<InterfaceInfo> interfaceInfoList = interfaceInfoPage.getRecords();
-        Page<InterfaceInfoVO> interfaceInfoVOPage = new Page<>(interfaceInfoPage.getCurrent(), interfaceInfoPage.getSize(), interfaceInfoPage.getTotal());
+        Page<InterfaceInfoVO> interfaceInfoVOPage = new Page<>(interfaceInfoPage.getCurrent(),
+                interfaceInfoPage.getSize(), interfaceInfoPage.getTotal());
         if (CollUtil.isEmpty(interfaceInfoList)) {
             return interfaceInfoVOPage;
         }
@@ -139,7 +140,7 @@ public class InterfaceInfoServiceImpl extends ServiceImpl<InterfaceInfoMapper, I
         // 填充信息
         List<InterfaceInfoVO> interfaceInfoVOList = interfaceInfoList.stream().map(interfaceInfo -> {
             InterfaceInfoVO interfaceInfoVO = new InterfaceInfoVO();
-            BeanUtils.copyProperties(interfaceInfo,interfaceInfoVO);
+            BeanUtils.copyProperties(interfaceInfo, interfaceInfoVO);
 
             return interfaceInfoVO;
         }).collect(Collectors.toList());
@@ -176,7 +177,3 @@ public class InterfaceInfoServiceImpl extends ServiceImpl<InterfaceInfoMapper, I
         return this.updateById(interfaceInfo);
     }
 }
-
-
-
-

@@ -3,6 +3,7 @@ package com.qiapi.project.aop;
 import com.qiapi.project.annotation.AuthCheck;
 import com.qiapi.project.common.ErrorCode;
 import com.qiapi.project.exception.BusinessException;
+import com.qiapi.project.service.UserService;
 import com.qiapi.qiapicommon.model.entity.User;
 import com.qiapi.project.model.enums.UserRoleEnum;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -27,7 +28,7 @@ import javax.servlet.http.HttpServletRequest;
 public class AuthInterceptor {
 
     @Resource
-    private com.qiapi.service.UserService userService;
+    private UserService userService;
 
     /**
      * 执行拦截

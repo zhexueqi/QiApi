@@ -17,6 +17,7 @@ import com.qiapi.project.model.vo.PointBalanceVO;
 import com.qiapi.project.service.CreditService;
 import com.qiapi.project.service.OrderService;
 import com.qiapi.project.service.PointService;
+import com.qiapi.project.service.UserService;
 import com.qiapi.qiapicommon.model.entity.CreditPackage;
 import com.qiapi.qiapicommon.model.entity.User;
 import lombok.extern.slf4j.Slf4j;
@@ -46,7 +47,7 @@ public class CreditController {
     private PointService pointService;
 
     @Resource
-    private com.qiapi.service.UserService userService;
+    private UserService userService;
 
     @Resource
     private com.qiapi.project.service.CreditPackageService creditPackageService;

@@ -1,11 +1,7 @@
-# 公共配置文件
+# 生产环境配置文件
 server:
-  port: 8090
+  port: 8077
 spring:
-  main:
-    web-application-type: reactive
-  profiles:
-    active:
   cloud:
     gateway:
       default-filters:
@@ -36,18 +32,41 @@ spring:
           uri: http://localhost:8101
           predicates:
             - Path=/third-party/**
-logging:
-  level:
-    org:
-      springframework:
-        cloud:
-          gateway: trace
+
+# Dubbo 配置
 dubbo:
   application:
-    name: dubbo-springboot-demo-provider
+    name: qiapi-gateway
+    # 关闭Dubbo的QoS端口，避免端口冲突
+    qos-enable: false
   protocol:
     name: dubbo
     port: -1
   registry:
     id: nacos-registry
     address: nacos://localhost:8848
+    timeout: 60000
+    # 优化连接参数
+    parameters:
+      registry.check: false
+      subscribe.only: false
+      # 设置重试次数和间隔
+      retry.times: 3
+      retry.period: 5000
+      # 设置心跳间隔
+      heartbeat: 60000
+  # 消费者配置
+  consumer:
+    # 关闭启动时检查
+    check: false
+    timeout: 60000
+    retries: 2
+
+# 日志配置
+logging:
+  level:
+    root: INFO
+    org:
+      springframework:
+        cloud:
+          gateway: INFO

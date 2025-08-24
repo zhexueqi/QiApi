@@ -1,30 +1,52 @@
 # 线上配置文件
-# @author <a href="https://github.com/liyupi">程序员鱼皮</a>
-# @from <a href="https://yupi.icu">编程导航知识星球</a>
 server:
   port: 8101
 spring:
   # 数据库配置
-  # todo 需替换配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/qiapi
-    username: root
-    password: 123456
+    url: jdbc:mysql://localhost:3306/qiapi?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true&allowMultiQueries=true&connectTimeout=60000&socketTimeout=60000&autoReconnect=true&maxReconnects=3
+    username: qiapi
+    password: mHseFfT7PQx8FhF2
+    # HikariCP 连接池配置
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: QiapiHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 60000
+      connection-test-query: SELECT 1
+      validation-timeout: 5000
+      leak-detection-threshold: 60000
   # Redis 配置
-  # todo 需替换配置
   redis:
     database: 1
     host: localhost
     port: 6379
     timeout: 5000
-    password: 123456
+    password: redis_xk8ndm
   # Elasticsearch 配置
   # todo 需替换配置
   elasticsearch:
     uris: http://localhost:9200
     username: root
     password: 123456
+  # 邮件配置
+  mail:
+    host: smtp.qq.com
+    port: 587
+    username: 354715878@qq.com
+    password: githotrchjvybhdd
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+        debug: false
+
 mybatis-plus:
   configuration:
     # 生产环境关闭日志
@@ -35,3 +57,45 @@ knife4j:
     enable: true
     username: root
     password: 123456
+
+# Dubbo 配置
+dubbo:
+  application:
+    name: qiapi-backend
+    # 关闭Dubbo的QoS端口，避免端口冲突
+    qos-enable: false
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    id: nacos-registry
+    address: nacos://127.0.0.1:8848
+    timeout: 60000
+    # 优化连接参数
+    parameters:
+      registry.check: false
+      subscribe.only: false
+      # 设置重试次数和间隔
+      retry.times: 3
+      retry.period: 5000
+      # 设置心跳间隔
+      heartbeat: 60000
+  # 消费者配置
+  consumer:
+    # 关闭启动时检查
+    check: false
+    timeout: 60000
+    retries: 2
+  # 提供者配置
+  provider:
+    timeout: 60000
+    retries: 2
+
+# QiAPI 客户端配置
+qiapi:
+  client:
+    access-key: "zhexueqi"
+    secret-key: "zhexueqiSK"
+    platform-url: "http://localhost:8101/api"
+    default-timeout: 30000
+    enable-api-discovery: true

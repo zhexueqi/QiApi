@@ -1,0 +1,23 @@
+# 开发环境配置文件
+server:
+  port: 8090
+
+# Dubbo 配置
+dubbo:
+  application:
+    name: qiapi-gateway
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    id: nacos-registry
+    # 开发环境 Nacos 地址
+    address: nacos://localhost:8848
+
+# 日志配置
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: trace

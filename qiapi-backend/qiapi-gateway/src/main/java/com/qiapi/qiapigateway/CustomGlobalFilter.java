@@ -343,14 +343,6 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
     private Mono<Void> handlePlatformApi(ServerWebExchange exchange, GatewayFilterChain chain,
             ServerHttpRequest request, ServerHttpResponse response) {
         try {
-            // 获取Session信息（从 Cookie 中获取）
-            String sessionId = getSessionFromCookie(request);
-            if (sessionId == null) {
-                log.warn("平台业务接口缺少Session信息");
-                return handleNoAuth(response);
-            }
-
-            // 有Session就直接放行，由后端服务处理具体的用户认证
             log.info("平台业务接口请求，直接放行由后端服务处理");
             return chain.filter(exchange);
 

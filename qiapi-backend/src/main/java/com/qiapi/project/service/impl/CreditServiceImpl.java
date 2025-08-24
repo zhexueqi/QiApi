@@ -97,8 +97,7 @@ public class CreditServiceImpl extends ServiceImpl<UserCreditMapper, UserCredit>
             newCredit.setUpdateTime(new Date());
             newCredit.setIsDelete(0);
             InterfaceInfo interfaceInfo = interfaceInfoMapper.selectById(interfaceId);
-            // TODO: 修复UserCredit实体的interfaceName字段问题
-            // newCredit.setInterfaceName(interfaceInfo.getName());
+            newCredit.setInterfaceName(interfaceInfo.getName());
 
             boolean saveResult = this.save(newCredit);
             

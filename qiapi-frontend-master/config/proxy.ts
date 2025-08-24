@@ -31,7 +31,7 @@ export default {
   },
   pre: {
     '/api/': {
-      target: 'http://localhost:8090',
+      target: 'http://43.138.133.212:8077/api',
       changeOrigin: true,
       pathRewrite: { '^/api': '/api' }, // 修正路径重写规则
     },
