@@ -1,6 +1,7 @@
 package com.qiapi.project.service.impl;
 
 import cn.hutool.core.collection.CollUtil;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -65,7 +66,7 @@ public class InterfaceInfoServiceImpl extends ServiceImpl<InterfaceInfoMapper, I
 
     /**
      * 获取接口信息VO
-     * 
+     *
      * @param interfaceinfo
      * @param request
      * @return
@@ -122,14 +123,14 @@ public class InterfaceInfoServiceImpl extends ServiceImpl<InterfaceInfoMapper, I
 
     /**
      * 分页获取列表（封装类）
-     * 
+     *
      * @param interfaceInfoPage
      * @param request
      * @return
      */
     @Override
     public Page<InterfaceInfoVO> getInterfaceInfoVOPage(Page<InterfaceInfo> interfaceInfoPage,
-            HttpServletRequest request) {
+                                                        HttpServletRequest request) {
         List<InterfaceInfo> interfaceInfoList = interfaceInfoPage.getRecords();
         Page<InterfaceInfoVO> interfaceInfoVOPage = new Page<>(interfaceInfoPage.getCurrent(),
                 interfaceInfoPage.getSize(), interfaceInfoPage.getTotal());
@@ -175,5 +176,12 @@ public class InterfaceInfoServiceImpl extends ServiceImpl<InterfaceInfoMapper, I
         interfaceInfo.setId(id);
         interfaceInfo.setStatus(InterfaceInfoStatusEnum.ONLINE.getValue());
         return this.updateById(interfaceInfo);
+    }
+
+    @Override
+    public InterfaceInfo getByAppId(String apiId) {
+        LambdaQueryWrapper<InterfaceInfo> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(InterfaceInfo::getAppId, apiId);
+        return this.getOne(queryWrapper);
     }
 }

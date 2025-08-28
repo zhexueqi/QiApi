@@ -5,35 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75473c2a-bb64-438e-9402-0025d25ec5d7" name="Changes" comment="编写通用SDK，修复网关问题，统一接收前端请求并做统一处理">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qiapi-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qiapi-backend/qiapi-common/src/main/java/com/qiapi/qiapicommon/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/qiapi-common/src/main/java/com/qiapi/qiapicommon/model/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qiapi-backend/qiapi-common/src/main/java/com/qiapi/qiapicommon/model/entity/UserCredit.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/qiapi-common/src/main/java/com/qiapi/qiapicommon/model/entity/UserCredit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qiapi-backend/qiapi-common/src/main/java/com/qiapi/qiapicommon/service/InnerCreditService.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/qiapi-common/src/main/java/com/qiapi/qiapicommon/service/InnerCreditService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qiapi-backend/qiapi-gateway/src/main/java/com/qiapi/qiapigateway/CustomGlobalFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/qiapi-gateway/src/main/java/com/qiapi/qiapigateway/CustomGlobalFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qiapi-backend/qiapi-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/qiapi-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/aop/AuthInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/aop/AuthInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/config/RedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/controller/CreditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/controller/CreditController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qiapi-backend/qiapi-client-sdk/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/qiapi-client-sdk/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qiapi-backend/qiapi-client-sdk/src/main/java/com/qiapi/QiapiClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/qiapi-client-sdk/src/main/java/com/qiapi/QiapiClientConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qiapi-backend/qiapi-client-sdk/src/main/java/com/qiapi/client/QiApiClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/qiapi-client-sdk/src/main/java/com/qiapi/client/QiApiClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qiapi-backend/qiapi-client-sdk/src/main/java/com/qiapi/config/ApiConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/qiapi-client-sdk/src/main/java/com/qiapi/config/ApiConfigManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qiapi-backend/qiapi-client-sdk/src/main/java/com/qiapi/config/DefaultApiConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/qiapi-client-sdk/src/main/java/com/qiapi/config/DefaultApiConfigManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qiapi-backend/qiapi-common/src/main/java/com/qiapi/qiapicommon/model/entity/InterfaceInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/qiapi-common/src/main/java/com/qiapi/qiapicommon/model/entity/InterfaceInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/controller/InterfaceInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/controller/InterfaceInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/model/dto/user/UserLoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/model/dto/user/UserLoginRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/model/dto/user/UserQueryRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/model/dto/user/UserQueryRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/model/dto/user/UserRegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/model/dto/user/UserRegisterRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/service/impl/CreditServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/service/impl/CreditServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/service/impl/InnerCreditServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/service/impl/InnerCreditServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/service/InterfaceInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/service/InterfaceInfoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/service/impl/InterfaceInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/service/impl/InterfaceInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/utils/SqlUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/src/main/java/com/qiapi/project/utils/SqlUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qiapi-backend/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/src/main/resources/application-prod.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qiapi-backend/src/main/resources/application-test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/src/main/resources/application-test.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qiapi-backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qiapi-backend/src/test/java/com/qiapi/project/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/src/test/java/com/qiapi/project/service/UserServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qiapi-frontend-master/config/proxy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-frontend-master/config/proxy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/create_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/create_table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qiapi-backend/src/main/resources/mapper/InterfaceInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/qiapi-backend/src/main/resources/mapper/InterfaceInfoMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +82,7 @@
   &quot;keyToString&quot;: {
     &quot;HTTP Request.generated-requests | #34.executor&quot;: &quot;Run&quot;,
     &quot;HTTP Request.generated-requests | #36.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #40.executor&quot;: &quot;Run&quot;,
     &quot;Maven.qiapi-backend [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.qiapi-backend [compile].executor&quot;: &quot;Run&quot;,
     &quot;Maven.qiapi-backend [install].executor&quot;: &quot;Run&quot;,
@@ -158,6 +144,9 @@
     <configuration name="generated-requests | #36" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="36" requestIdentifier="#36" runType="Run single request">
       <method v="2" />
     </configuration>
+    <configuration name="generated-requests | #40" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="40" requestIdentifier="#40" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="MainApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="qiapi-backend" />
@@ -183,6 +172,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.generated-requests | #40" />
         <item itemvalue="HTTP Request.generated-requests | #34" />
         <item itemvalue="HTTP Request.generated-requests | #36" />
       </list>
@@ -219,7 +209,8 @@
       <workItem from="1755962756412" duration="382000" />
       <workItem from="1755963421284" duration="8601000" />
       <workItem from="1756004239022" duration="18799000" />
-      <workItem from="1756045104195" duration="3813000" />
+      <workItem from="1756045104195" duration="4858000" />
+      <workItem from="1756125422503" duration="10108000" />
     </task>
     <task id="LOCAL-00001" summary="update gitignore">
       <option name="closed" value="true" />

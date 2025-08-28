@@ -1,6 +1,4 @@
 # 测试配置文件
-# @author <a href="https://github.com/liyupi">程序员鱼皮</a>
-# @from <a href="https://yupi.icu">编程导航知识星球</a>
 server:
   port: 8101
 spring:
@@ -25,11 +23,3 @@ spring:
     uris: http://localhost:9200
     username: root
     password: 123456
-# QiAPI 客户端配置
-qiapi:
-  client:
-    access-key: "zhexueqi"
-    secret-key: "zhexueqiSK"
-    platform-url: "http://localhost:8081/api"
-    default-timeout: 30000
-    enable-api-discovery: true

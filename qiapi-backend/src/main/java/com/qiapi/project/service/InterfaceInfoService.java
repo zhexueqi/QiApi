@@ -54,4 +54,6 @@ public interface InterfaceInfoService extends IService<InterfaceInfo> {
      * @return
      */
     boolean onlineInterfaceInfo(long id, HttpServletRequest request);
+
+    InterfaceInfo getByAppId(String apiId);
 }

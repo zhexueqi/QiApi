@@ -90,12 +90,3 @@ dubbo:
   provider:
     timeout: 60000
     retries: 2
-
-# QiAPI 客户端配置
-qiapi:
-  client:
-    access-key: "zhexueqi"
-    secret-key: "zhexueqiSK"
-    platform-url: "http://localhost:8101/api"
-    default-timeout: 30000
-    enable-api-discovery: true

@@ -20,6 +20,15 @@ public interface ApiConfigManager {
     ApiConfig getApiConfig(String apiId);
     
     /**
+     * 根据API ID从远程平台获取API配置
+     * 
+     * @param apiId API唯一标识
+     * @param platformUrl 平台URL
+     * @return API配置信息
+     */
+    ApiConfig getApiConfigFromPlatform(String apiId, String platformUrl);
+    
+    /**
      * 获取所有可用的API配置
      * 
      * @return API配置列表
@@ -62,4 +71,41 @@ public interface ApiConfigManager {
      * @return API配置列表
      */
     List<ApiConfig> getApiConfigsByCategory(String category);
+    
+    /**
+     * 从远程平台加载API配置
+     * 
+     * @param platformUrl 平台URL
+     * @return API配置列表
+     */
+    List<ApiConfig> loadApiConfigsFromPlatform(String platformUrl);
+    
+    /**
+     * 设置API配置缓存过期时间
+     * 
+     * @param expireTime 过期时间(秒)
+     */
+    void setCacheExpireTime(long expireTime);
+    
+    /**
+     * 获取缓存的API配置
+     * 
+     * @param apiId API标识
+     * @return API配置
+     */
+    ApiConfig getCachedApiConfig(String apiId);
+    
+    /**
+     * 添加API配置监听器
+     * 
+     * @param listener 监听器
+     */
+    void addConfigChangeListener(ConfigChangeListener listener);
+    
+    /**
+     * 设置默认平台URL
+     * 
+     * @param platformUrl 平台URL
+     */
+    void setDefaultPlatformUrl(String platformUrl);
 }

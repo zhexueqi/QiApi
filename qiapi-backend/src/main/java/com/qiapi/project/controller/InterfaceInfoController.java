@@ -12,6 +12,7 @@ import com.qiapi.project.model.dto.interfaceinfo.InterfaceInfoAddRequest;
 import com.qiapi.project.model.dto.interfaceinfo.InterfaceInfoInvokeRequest;
 import com.qiapi.project.model.dto.interfaceinfo.InterfaceInfoQueryRequest;
 import com.qiapi.project.model.dto.interfaceinfo.InterfaceInfoUpdateRequest;
+import com.qiapi.project.model.vo.InterfaceConfigVO;
 import com.qiapi.project.model.vo.InterfaceInfoVO;
 import com.qiapi.project.service.CreditService;
 import com.qiapi.project.service.InterfaceInfoService;
@@ -21,7 +22,6 @@ import com.qiapi.qiapicommon.model.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
-import com.qiapi.service.UserInterfaceInfoService;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -48,7 +48,6 @@ public class InterfaceInfoController {
     private QiApiClient qiApiClient;
     @Resource
     private CreditService creditService;
-
 
     /**
      * 创建
@@ -139,6 +138,31 @@ public class InterfaceInfoController {
             throw new BusinessException(ErrorCode.NOT_FOUND_ERROR);
         }
         return ResultUtils.success(interfaceInfoService.getInterfaceInfoVO(interfaceInfo, request));
+    }
+
+    /**
+     * 根据 apiId 获取接口配置信息
+     *
+     * @param apiId
+     * @return
+     */
+    @GetMapping("/config/{apiId}")
+    public BaseResponse<InterfaceConfigVO> getInterfaceConfigByApiId(@PathVariable String apiId) {
+        if (apiId == null || apiId.isEmpty()) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        try {
+            InterfaceInfo interfaceInfo = interfaceInfoService.getByAppId(apiId);
+            if (interfaceInfo == null) {
+                throw new BusinessException(ErrorCode.NOT_FOUND_ERROR);
+            }
+
+            InterfaceConfigVO interfaceConfigVO = new InterfaceConfigVO();
+            BeanUtils.copyProperties(interfaceInfo, interfaceConfigVO);
+            return ResultUtils.success(interfaceConfigVO);
+        } catch (NumberFormatException e) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "无效的apiId格式");
+        }
     }
 
     /**

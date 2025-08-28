@@ -1,32 +1,27 @@
-package com.qiapi.qiapicommon.model.entity;
+package com.qiapi.project.model.vo;
 
-import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 接口信息
+ * 接口配置信息封装类
  *
- * @author <a href="https://github.com/liyupi">程序员鱼皮</a>
- * @from <a href="https://yupi.icu">编程导航知识星球</a>
+ * @author zhexueqi
  */
-@TableName(value ="interface_info")
 @Data
-public class InterfaceInfo implements Serializable {
+public class InterfaceConfigVO implements Serializable {
+
     /**
      * 主键
      */
-    @TableId(type = IdType.AUTO)
     private Long id;
 
     /**
      * 名称
      */
     private String name;
-
-    private String appId;
 
     /**
      * 描述
@@ -40,9 +35,6 @@ public class InterfaceInfo implements Serializable {
 
     /**
      * 请求参数
-     * [
-     *   {"name": "username", "type": "string"}
-     * ]
      */
     private String requestParams;
 
@@ -81,12 +73,5 @@ public class InterfaceInfo implements Serializable {
      */
     private Date updateTime;
 
-    /**
-     * 是否删除(0-未删, 1-已删)
-     */
-    @TableLogic
-    private Integer isDelete;
-
-    @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 }

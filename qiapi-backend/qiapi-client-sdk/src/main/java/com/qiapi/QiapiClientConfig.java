@@ -27,50 +27,59 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties("qiapi.client")
 @EnableConfigurationProperties(QiapiClientConfig.class)
 public class QiapiClientConfig {
-    
+
     private String accessKey;
     private String secretKey;
-    
+
     /**
      * 平台基础URL，用于获取API配置
      */
-    private String platformUrl = "http://localhost:8080";
-    
+    private String platformUrl;
+
     /**
      * 默认超时时间（毫秒）
      */
     private Integer defaultTimeout = 30000;
-    
+
     /**
-     * 是否启用API发现
+     * API配置缓存过期时间（秒）
      */
-    private boolean enableApiDiscovery = true;
-    
+    private long cacheExpireTime = 300;
+
     @Bean
     public QiApiClient getQiApiClient() {
         ApiConfigManager apiConfigManager = apiConfigManager();
         RequestBuilder requestBuilder = requestBuilder();
         ResponseHandler responseHandler = responseHandler();
-        
+
+        // 直接传递platformUrl给QiApiClient
         return new QiApiClient(
-            accessKey != null ? accessKey : "default-access-key", 
-            secretKey != null ? secretKey : "default-secret-key", 
-            apiConfigManager, 
-            requestBuilder, 
-            responseHandler
-        );
+                accessKey != null ? accessKey : "default-access-key",
+                secretKey != null ? secretKey : "default-secret-key",
+                apiConfigManager,
+                requestBuilder,
+                responseHandler,
+                platformUrl != null ? platformUrl : "http://localhost:8101/");
     }
-    
+
     @Bean
     public ApiConfigManager apiConfigManager() {
-        return new DefaultApiConfigManager();
+        DefaultApiConfigManager manager = new DefaultApiConfigManager();
+        // 设置默认平台URL
+        if (platformUrl != null && !platformUrl.isEmpty()) {
+            manager.setDefaultPlatformUrl(platformUrl);
+        }
+        if (cacheExpireTime > 0) {
+            manager.setCacheExpireTime(cacheExpireTime);
+        }
+        return manager;
     }
-    
+
     @Bean
     public RequestBuilder requestBuilder() {
         return new DefaultRequestBuilder();
     }
-    
+
     @Bean
     public ResponseHandler responseHandler() {
         return new DefaultResponseHandler();
